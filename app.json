@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Climacast",
-    "slug": "Climacast",
+    "slug": "climacast",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/app/icon.png",
@@ -28,7 +28,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "641e868d-3b71-44cc-b0d9-c849e6cad50a"
+        "projectId": "f212fbbb-e6c0-4ae2-8ad9-33577f169857"
       }
     }
   }
