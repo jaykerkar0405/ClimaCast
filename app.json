@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "Climacast",
+    "slug": "Climacast",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/app/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff",
+      "image": "./assets/images/app/splash.png"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.bytewise.climacast",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#FFFFFF",
+        "foregroundImage": "./assets/images/app/adaptive-icon.png"
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "641e868d-3b71-44cc-b0d9-c849e6cad50a"
+      }
+    }
+  }
+}

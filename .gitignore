@@ -1,0 +1,15 @@
+.env
+dist/
+*.jks
+*.p8
+*.p12
+*.key
+.expo/
+*.orig.*
+web-build/
+npm-debug.*
+node_modules/
+*.mobileprovision
+
+# macOS
+.DS_Store
