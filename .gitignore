@@ -1,9 +1,9 @@
 .env
-dist/
-*.jks
 *.p8
 *.p12
 *.key
+dist/
+*.jks
 .expo/
 *.orig.*
 web-build/
