@@ -24,7 +24,7 @@ const Header = ({ weather_location, weather_icon, weather_condition }) => {
                 .weather_message_first_line
             }
           </Text>
-          <Text style={[styles.left_panel_title, { marginTop: -5 }]}>
+          <Text style={styles.left_panel_title}>
             {
               render_weather_message(weather_condition)
                 .weather_message_second_line
@@ -42,8 +42,8 @@ const Header = ({ weather_location, weather_icon, weather_condition }) => {
 
       <View style={styles.right_panel}>
         <Ionicons
+          size={20}
           name="ios-location-sharp"
-          size={21}
           color={theme().tertiary_text_color}
         />
         <Text style={styles.right_panel_title}>

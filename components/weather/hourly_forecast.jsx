@@ -59,8 +59,10 @@ const HourlyForecast = ({ future_forecast, offset }) => {
         </Text>
 
         <Text style={styles.hourly_forecast_temperature}>
-          {Math.round(temperature)}°
+          {Math.round(temperature)}
         </Text>
+
+        <Text style={styles.hourly_forecast_degree_symbol}>°C</Text>
       </View>
     );
   };
@@ -71,6 +73,7 @@ const HourlyForecast = ({ future_forecast, offset }) => {
       data={hourly_forecast}
       keyExtractor={(item) => item.dt}
       showsHorizontalScrollIndicator={false}
+      style={styles.hourly_forecast_container}
       renderItem={({ item }) => {
         if (convert_unix_to_offset_time(item.dt) !== "21:00") {
           return (

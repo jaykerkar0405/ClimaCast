@@ -8,9 +8,8 @@ const styles = StyleSheet.create({
   header: {
     display: "flex",
     flexDirection: "row",
-    paddingHorizontal: 10,
     justifyContent: "space-around",
-    marginTop: 0.055 * screen_height,
+    marginTop: 0.015 * screen_height,
   },
   left_panel: {
     display: "flex",
@@ -19,16 +18,17 @@ const styles = StyleSheet.create({
   },
   left_panel_title: {
     fontSize: 13.5,
+    marginBottom: -5,
     fontFamily: "Poppins_500Medium",
     color: theme().primary_text_color,
   },
   weather_icon: {
-    bottom: -7,
-    right: -26.75,
+    right: -12,
+    bottom: -12,
     position: "absolute",
     resizeMode: "contain",
-    width: 0.06 * screen_width,
-    height: 0.06 * screen_height,
+    width: 0.055 * screen_width,
+    height: 0.055 * screen_height,
   },
   right_panel: {
     display: "flex",

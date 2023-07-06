@@ -2,7 +2,7 @@
 import { ScrollView, RefreshControl } from "react-native";
 
 // React Hook Imports
-import { useRef, useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 
 // App's Internal Imports
 import {
@@ -20,10 +20,10 @@ import {
   fetch_hourly_weather_by_city,
   fetch_hourly_weather_by_geolocation,
 } from "../../modules";
+import { screen_height } from "../../constants";
 import { WalkThroughContext } from "../../contexts";
 
 const Main = ({ type, identifier, navigation }) => {
-  const snapshot_ref = useRef(null);
   const [loading, set_loading] = useState(true);
   const [refreshing, set_refreshing] = useState(false);
   const [air_quality, set_air_quality] = useState(null);
@@ -31,7 +31,9 @@ const Main = ({ type, identifier, navigation }) => {
   const [future_forecast, set_future_forecast] = useState(null);
   const { walk_through_status } = useContext(WalkThroughContext);
   const [weather_forecast, set_weather_forecast] = useState(null);
-  const [scrollview_height, set_scrollview_height] = useState(1412);
+  const [scroll_view_height, set_scroll_view_height] = useState(
+    1.725 * screen_height
+  );
 
   const fetch_air_quality_forecast = async (latitude, longitude) => {
     const fetched_air_quality = await fetch_air_quality(latitude, longitude);
@@ -134,11 +136,11 @@ const Main = ({ type, identifier, navigation }) => {
 
   useEffect(() => {
     if (active_tab === "weather") {
-      set_scrollview_height(1412);
+      set_scroll_view_height(1.725 * screen_height);
     }
 
     if (active_tab === "air_quality") {
-      set_scrollview_height(950);
+      set_scroll_view_height(1.135 * screen_height);
     }
   }, [active_tab]);
 
@@ -153,7 +155,7 @@ const Main = ({ type, identifier, navigation }) => {
           }
           contentContainerStyle={{
             flexGrow: 1,
-            height: scrollview_height,
+            height: scroll_view_height,
           }}
           style={{ paddingHorizontal: 15 }}
           showsVerticalScrollIndicator={false}
@@ -168,9 +170,8 @@ const Main = ({ type, identifier, navigation }) => {
 
           {active_tab === "weather" ? (
             <Weather
-              snapshot_ref={snapshot_ref}
-              weather_forecast={weather_forecast}
               future_forecast={future_forecast}
+              weather_forecast={weather_forecast}
             />
           ) : (
             <AirQuality air_quality={air_quality} />

@@ -17,10 +17,10 @@ const styles = StyleSheet.create({
   tab: {
     display: "flex",
     borderRadius: 10,
-    marginVertical: 3.5,
+    marginVertical: 4.5,
     alignItems: "center",
     justifyContent: "center",
-    width: 0.45 * screen_width,
+    width: 0.447 * screen_width,
     height: 0.05 * screen_height,
   },
   tab_title: {

@@ -27,7 +27,7 @@ const Footer = () => {
 
       <View style={styles.application_information_container}>
         <Text style={styles.application_information_title}>App Version:</Text>
-        <Text style={styles.application_information_value}> 1.0.0</Text>
+        <Text style={styles.application_information_value}> 1.0.1</Text>
       </View>
     </>
   );

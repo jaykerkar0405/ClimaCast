@@ -27,12 +27,16 @@ const WeatherInformation = ({
       <View style={styles.theoretical_information_container}>
         <View style={styles.theoretical_information}>
           <Text style={styles.theoretical_information_title}>Longitude</Text>
-          <Text style={styles.theoretical_information_value}>{longitude}</Text>
+          <Text style={styles.theoretical_information_value}>
+            {longitude.toFixed(2)}
+          </Text>
         </View>
 
         <View style={styles.theoretical_information}>
           <Text style={styles.theoretical_information_title}>Latitude</Text>
-          <Text style={styles.theoretical_information_value}>{latitude}</Text>
+          <Text style={styles.theoretical_information_value}>
+            {latitude.toFixed(2)}
+          </Text>
         </View>
 
         <View style={styles.theoretical_information}>
@@ -47,17 +51,23 @@ const WeatherInformation = ({
             Min Temperature
           </Text>
           <Text style={styles.theoretical_information_value}>
-            {Math.round(min_temperature)}° C
+            {Math.round(min_temperature)}
+            {"   "}
           </Text>
+          <Text style={styles.theoretical_information_degree_symbol}>°C</Text>
         </View>
 
-        <View style={[styles.theoretical_information, { borderBottomWidth: 0 }]}>
+        <View
+          style={[styles.theoretical_information, { borderBottomWidth: 0 }]}
+        >
           <Text style={styles.theoretical_information_title}>
             Max Temperature
           </Text>
           <Text style={styles.theoretical_information_value}>
-            {Math.round(max_temperature)}° C
+            {Math.round(max_temperature)}
+            {"   "}
           </Text>
+          <Text style={styles.theoretical_information_degree_symbol}>°C</Text>
         </View>
       </View>
 
@@ -65,12 +75,16 @@ const WeatherInformation = ({
         <View style={styles.wind_information}>
           <View style={styles.wind_component}>
             <Text style={styles.wind_component_title}>Gust</Text>
-            <Text style={styles.wind_component_value}>{wind_gust} m/s</Text>
+            <Text style={styles.wind_component_value}>
+              {wind_gust ? `${Math.round((wind_gust * 18) / 5)} km/hr` : "--"}
+            </Text>
           </View>
 
           <View style={styles.wind_component}>
             <Text style={styles.wind_component_title}>Speed</Text>
-            <Text style={styles.wind_component_value}>{wind_speed} m/s</Text>
+            <Text style={styles.wind_component_value}>
+              {Math.round((wind_speed * 18) / 5)} km/hr
+            </Text>
           </View>
 
           <View style={styles.wind_component}>
@@ -80,7 +94,9 @@ const WeatherInformation = ({
 
           <View style={[styles.wind_component, { borderBottomWidth: 0 }]}>
             <Text style={styles.wind_component_title}>Visibility</Text>
-            <Text style={styles.wind_component_value}>{visibility}</Text>
+            <Text style={styles.wind_component_value}>
+              {Math.round(visibility / 1000)} km
+            </Text>
           </View>
         </View>
 

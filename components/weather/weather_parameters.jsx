@@ -15,13 +15,16 @@ const WeatherParameters = ({
     <View style={styles.weather_parameters}>
       <View style={styles.weather_parameter}>
         <Ionicons style={styles.weather_parameter_icon} name="thermometer" />
+        <Text style={styles.weather_parameter_title}>Feels Like</Text>
         <Text style={styles.weather_parameter_value}>
-          {Math.round(feels_like)}° C
+          {Math.round(feels_like)}
         </Text>
+        <Text style={styles.weather_parameter_degree_symbol}>°C</Text>
       </View>
 
       <View style={styles.weather_parameter}>
         <Feather style={styles.weather_parameter_icon} name="sunrise" />
+        <Text style={styles.weather_parameter_title}>Sunrise</Text>
         <Text style={styles.weather_parameter_value}>
           {convert_unix_to_standard_time(sunrise)}
         </Text>
@@ -29,6 +32,7 @@ const WeatherParameters = ({
 
       <View style={styles.weather_parameter}>
         <Feather style={styles.weather_parameter_icon} name="sunset" />
+        <Text style={styles.weather_parameter_title}>Sunset</Text>
         <Text style={styles.weather_parameter_value}>
           {convert_unix_to_standard_time(sunset)}
         </Text>

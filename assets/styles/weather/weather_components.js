@@ -28,16 +28,15 @@ const styles = StyleSheet.create({
     width: 0.35 * screen_width,
     height: 0.35 * screen_height,
   },
-  temperature: {
+  weather_temperature: {
     fontSize: 50,
     marginHorizontal: 40,
     fontFamily: "Poppins_500Medium",
     color: theme().primary_text_color,
   },
-  degree_symbol: {
-    right: 53,
-    bottom: 45,
-    fontSize: 30,
+  weather_degree_symbol: {
+    right: 48,
+    bottom: 70,
     position: "absolute",
     fontFamily: "Poppins_500Medium",
     color: theme().primary_text_color,
@@ -58,13 +57,13 @@ const styles = StyleSheet.create({
     backgroundColor: theme().tertiary_background_color,
   },
   weather_parameter_title: {
-    fontSize: 12,
+    fontSize: 11.5,
     marginTop: 2,
     fontFamily: "Poppins_400Regular",
     color: theme().secondary_text_color,
   },
   weather_parameter_value: {
-    fontSize: 12.5,
+    fontSize: 11.5,
     fontFamily: "Poppins_500Medium",
     color: theme().primary_text_color,
   },

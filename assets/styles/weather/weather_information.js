@@ -6,8 +6,9 @@ import { theme, screen_width, screen_height } from "../../../constants";
 
 const styles = StyleSheet.create({
   weather_information: {
-    marginTop: 50,
+    marginTop: 20,
     display: "flex",
+    marginBottom: 35,
     justifyContent: "center",
     width: 0.9 * screen_width,
     height: 0.54 * screen_height,
@@ -37,8 +38,16 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins_400Regular",
     color: theme().primary_text_color,
   },
+  theoretical_information_degree_symbol: {
+    right: 10,
+    bottom: 20,
+    fontSize: 10,
+    position: "absolute",
+    fontFamily: "Poppins_400Regular",
+    color: theme().primary_text_color,
+  },
   wind_information_container: {
-    marginTop: 10,
+    marginTop: 15,
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",

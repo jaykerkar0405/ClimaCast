@@ -6,8 +6,9 @@ import { theme, screen_height } from "../../../constants";
 
 const styles = StyleSheet.create({
   air_pollutant_concentration_container: {
-    marginTop: 105,
     borderRadius: 10,
+    marginTop: 0.125 * screen_height,
+    marginBottom: 0.025 * screen_height,
     backgroundColor: theme().quaternary_background_color,
   },
   air_pollutant_concentration: {

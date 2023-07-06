@@ -6,10 +6,10 @@ import { theme, screen_width, screen_height } from "../../../constants";
 
 const styles = StyleSheet.create({
   utility_components: {
+    marginTop: 15,
     display: "flex",
     flexDirection: "row",
-    width: 0.9 * screen_width,
-    height: 0.095 * screen_height,
+    width: 0.92 * screen_width,
     justifyContent: "space-between",
   },
   utility: {

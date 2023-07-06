@@ -8,13 +8,13 @@ const styles = StyleSheet.create({
   container: {
     width: screen_width,
     height: screen_height,
-    paddingHorizontal: 20,
+    paddingHorizontal: 0.05 * screen_width,
     backgroundColor: theme().primary_background_color,
   },
   header: {
     display: "flex",
     alignItems: "center",
-    marginTop: 0.07 * screen_height,
+    marginTop: 0.025 * screen_height,
   },
   heading: {
     fontSize: 23.5,

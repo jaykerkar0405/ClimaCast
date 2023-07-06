@@ -5,9 +5,12 @@ import { StyleSheet } from "react-native";
 import { theme, screen_width, screen_height } from "../../../constants";
 
 const styles = StyleSheet.create({
-  hourly_forecast: {
+  hourly_forecast_container: {
+    flexGrow: 0,
     marginTop: 15,
-    elevation: 1.5,
+    width: 0.9 * screen_width,
+  },
+  hourly_forecast: {
     display: "flex",
     borderRadius: 10,
     alignItems: "center",
@@ -40,6 +43,14 @@ const styles = StyleSheet.create({
   hourly_forecast_temperature: {
     bottom: 6.25,
     fontSize: 12,
+    position: "absolute",
+    fontFamily: "Poppins_400Regular",
+    color: theme().primary_text_color,
+  },
+  hourly_forecast_degree_symbol: {
+    bottom: 13,
+    right: 22.5,
+    fontSize: 10,
     position: "absolute",
     fontFamily: "Poppins_400Regular",
     color: theme().primary_text_color,

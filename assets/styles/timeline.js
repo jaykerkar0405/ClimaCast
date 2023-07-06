@@ -38,14 +38,13 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins_400Regular",
   },
   timeline: {
-    marginTop: 12,
+    marginTop: 7.5,
     display: "flex",
     marginRight: 15,
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
     width: 0.5 * screen_width,
-    height: 0.05 * screen_height,
   },
   timeline_date: {
     fontSize: 12.75,

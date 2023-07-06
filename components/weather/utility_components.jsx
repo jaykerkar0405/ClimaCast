@@ -50,7 +50,9 @@ const UtilityComponents = ({ snapshot_ref, weather_forecast_location }) => {
         style={styles.utility}
         onPress={() => {
           snapshot_ref.current.capture().then((uri) => {
-            Sharing.shareAsync(uri);
+            Sharing.shareAsync(uri, {
+              dialogTitle: "Climacast: Weather Forecast",
+            });
           });
         }}
       >

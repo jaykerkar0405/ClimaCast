@@ -1,5 +1,5 @@
 // React Hook Imports
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 // App's Internal Imports
 import {
@@ -12,7 +12,8 @@ import {
   WeatherInformation,
 } from "../../components";
 
-const Weather = ({ snapshot_ref, weather_forecast, future_forecast }) => {
+const Weather = ({ weather_forecast, future_forecast }) => {
+  const snapshot_ref = useRef(null);
   const [timeline_id, set_timeline_id] = useState(1);
   const [is_timeline_active, set_is_timeline_active] = useState(false);
 

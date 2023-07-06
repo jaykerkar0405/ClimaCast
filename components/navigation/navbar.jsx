@@ -1,5 +1,5 @@
 // React Native Component Imports
-import { View } from "react-native";
+import { Text, View } from "react-native";
 
 // App's External Imports
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -28,12 +28,20 @@ const Navbar = () => {
         options={{
           tabBarIcon: ({ focused }) => {
             return (
-              <View style={focused && styles.focused_tab}>
+              <View style={styles.tab}>
                 <Foundation
+                  size={26}
                   name="home"
-                  size={30}
                   style={focused ? styles.focused_icon : styles.unfocused_icon}
                 />
+
+                <Text
+                  style={
+                    focused ? styles.focused_title : styles.unfocused_title
+                  }
+                >
+                  Home
+                </Text>
               </View>
             );
           },
@@ -45,12 +53,20 @@ const Navbar = () => {
         options={{
           tabBarIcon: ({ focused }) => {
             return (
-              <View style={focused && styles.focused_tab}>
+              <View style={styles.tab}>
                 <FontAwesome
+                  size={26}
                   name="search"
-                  size={30}
                   style={focused ? styles.focused_icon : styles.unfocused_icon}
                 />
+
+                <Text
+                  style={
+                    focused ? styles.focused_title : styles.unfocused_title
+                  }
+                >
+                  Search
+                </Text>
               </View>
             );
           },
@@ -64,12 +80,20 @@ const Navbar = () => {
           headerTitleAlign: "center",
           tabBarIcon: ({ focused }) => {
             return (
-              <View style={focused && styles.focused_tab}>
+              <View style={styles.tab}>
                 <Ionicons
+                  size={26}
                   name="settings"
-                  size={30}
                   style={focused ? styles.focused_icon : styles.unfocused_icon}
                 />
+
+                <Text
+                  style={
+                    focused ? styles.focused_title : styles.unfocused_title
+                  }
+                >
+                  Settings
+                </Text>
               </View>
             );
           },

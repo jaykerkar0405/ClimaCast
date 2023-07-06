@@ -2,6 +2,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 // App's Internal Imports
+import { theme } from "../../constants";
 import { Navbar } from "../../components";
 import { Error, SearchResult } from "../../screens";
 
@@ -15,15 +16,26 @@ const Navigation = () => {
         component={Navbar}
         options={{ headerShown: false }}
       />
-      <Stack.Screen
-        name="SearchResult"
-        component={SearchResult}
-        options={{ headerShown: false }}
-      />
+
       <Stack.Screen
         name="Error"
         component={Error}
         options={{ headerShown: false }}
+      />
+
+      <Stack.Screen
+        name="SearchResult"
+        component={SearchResult}
+        options={{
+          headerShown: true,
+          headerTitleAlign: "center",
+          headerTitle: "Search Result",
+          headerTitleStyle: {
+            fontSize: 17.5,
+            fontFamily: "Poppins_500Medium",
+            color: theme().primary_text_color,
+          },
+        }}
       />
     </Stack.Navigator>
   );

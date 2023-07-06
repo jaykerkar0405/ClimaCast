@@ -6,7 +6,6 @@ import { theme } from "../../constants";
 
 const styles = StyleSheet.create({
   promotional_information_container: {
-    marginTop: 10,
     display: "flex",
     alignSelf: "center",
     flexDirection: "row",
@@ -16,8 +15,8 @@ const styles = StyleSheet.create({
     color: theme().primary_text_color,
   },
   promotional_information_value: {
-    color: theme().tertiary_text_color,
     fontFamily: "Poppins_500Medium",
+    color: theme().tertiary_text_color,
   },
   application_information_container: {
     display: "flex",

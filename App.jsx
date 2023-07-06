@@ -62,7 +62,10 @@ const App = () => {
           <ThemeState>
             <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
               <NavigationContainer theme={theme_configuration}>
-                <StatusBar backgroundColor={"transparent"} translucent />
+                <StatusBar
+                  translucent={false}
+                  backgroundColor={"transparent"}
+                />
                 <Screens />
               </NavigationContainer>
             </SafeAreaView>

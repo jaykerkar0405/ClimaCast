@@ -1,6 +1,7 @@
+// React Native Component Imports
 import { ToastAndroid } from "react-native";
 
-export default function Toast(message) {
+const Toast = (message) => {
   return ToastAndroid.showWithGravityAndOffset(
     message,
     ToastAndroid.LONG,
@@ -8,4 +9,6 @@ export default function Toast(message) {
     25,
     50
   );
-}
+};
+
+export default Toast;

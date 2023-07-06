@@ -67,7 +67,9 @@ const Timeline = ({
             </>
           ) : (
             <>
-              <Text style={styles.timeline_drawer_title}>expand</Text>
+              <Text style={[styles.timeline_drawer_title, { marginLeft: 7.5 }]}>
+                expand
+              </Text>
               <Ionicons
                 name="chevron-down"
                 style={styles.timeline_drawer_icon}
@@ -85,6 +87,10 @@ const Timeline = ({
             keyExtractor={(item) => item}
             showsHorizontalScrollIndicator={false}
             renderItem={({ item }) => <TimelineItem item={item} />}
+            style={{
+              flexGrow: 0,
+              height: 0.0625 * screen_height,
+            }}
           />
 
           <HourlyForecast

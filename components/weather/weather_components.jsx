@@ -26,7 +26,10 @@ const WeatherComponents = ({
 }) => {
   return (
     <ViewShot
-      style={[styles.weather, is_timeline_active && { marginBottom: 30 }]}
+      style={[
+        styles.weather,
+        is_timeline_active && { marginTop: 0, marginBottom: -15 },
+      ]}
       ref={snapshot_ref}
     >
       <View style={styles.upper_panel}>
@@ -37,16 +40,16 @@ const WeatherComponents = ({
           style={styles.weather_icon}
         />
 
-        <Text style={styles.temperature}>
+        <Text style={styles.weather_temperature}>
           {Math.round(temperature)}
           {"  "}
         </Text>
-        <Text style={styles.degree_symbol}>°</Text>
+        <Text style={styles.weather_degree_symbol}>°C</Text>
       </View>
 
       <View style={styles.lower_panel}>
         <View style={styles.weather_parameter}>
-          <Feather name="wind" color="#362FD9" size={23.75} />
+          <Feather name="wind" color="#362FD9" size={23} />
           <Text style={styles.weather_parameter_title}>Wind</Text>
           <Text style={styles.weather_parameter_value}>
             {Math.round(wind_speed * 3.6)} km/hr
@@ -54,7 +57,7 @@ const WeatherComponents = ({
         </View>
 
         <View style={styles.weather_parameter}>
-          <Ionicons name="water" color="#362FD9" size={23.75} />
+          <Ionicons name="water" color="#362FD9" size={23} />
           <Text style={styles.weather_parameter_title}>Humidity</Text>
           <Text style={styles.weather_parameter_value}>
             {Math.round(humidity)} %
@@ -62,7 +65,7 @@ const WeatherComponents = ({
         </View>
 
         <View style={styles.weather_parameter}>
-          <MaterialCommunityIcons name="gauge" color="#362FD9" size={23.75} />
+          <MaterialCommunityIcons name="gauge" color="#362FD9" size={23} />
           <Text style={styles.weather_parameter_title}>Pressure</Text>
           <Text style={styles.weather_parameter_value}>
             {Math.round(pressure / 1013.25)} atm
