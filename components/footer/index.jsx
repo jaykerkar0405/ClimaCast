@@ -1,6 +1,9 @@
 // React Native Component Imports
 import { View, Text, Linking, Pressable } from "react-native";
 
+// App's External Imports
+import * as Application from "expo-application";
+
 // App's Internal Imports
 import styles from "../../assets/styles/footer";
 
@@ -27,7 +30,18 @@ const Footer = () => {
 
       <View style={styles.application_information_container}>
         <Text style={styles.application_information_title}>App Version:</Text>
-        <Text style={styles.application_information_value}> 1.0.1</Text>
+        <Text style={styles.application_information_value}>
+          {" "}
+          {Application.nativeApplicationVersion}
+        </Text>
+        <Text style={styles.application_information_title}>
+          {"  "}
+          |  Build Version:
+        </Text>
+        <Text style={styles.application_information_value}>
+          {" "}
+          {Application.nativeBuildVersion}
+        </Text>
       </View>
     </>
   );

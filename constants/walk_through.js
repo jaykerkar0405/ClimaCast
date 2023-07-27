@@ -8,7 +8,7 @@ const walk_through_contents = [
     icon_color: "#1B9C85",
     title: "Location Access",
     description:
-      "Grant Climacast permission to access your location for accurate weather updates tailored to your area. Don't worry, your location data is only used for weather forecasting purposes and is not stored or shared.",
+      "Grant ClimaCast permission to access your location for accurate weather updates tailored to your area. Don't worry, your location data is only used for weather forecasting purposes and is not stored or shared.",
     image: images.location,
   },
   {
@@ -17,7 +17,7 @@ const walk_through_contents = [
     icon_color: "#4942E4",
     title: "Choose Your Theme",
     description:
-      "Choose a theme that fits your personality to personalize your weather experience. Climacast has a variety of themes to meet your choices, whether you like a clean and modern style or a lively and colorful interface.",
+      "Choose a theme that fits your personality to personalize your weather experience. ClimaCast has a variety of themes to meet your choices, whether you like a clean and modern style or a lively and colorful interface.",
     image: images.theme,
   },
   {
@@ -42,9 +42,9 @@ const walk_through_contents = [
     id: 5,
     icon_name: "rainy",
     icon_color: "#9DB2BF",
-    title: "Enjoy Climacast!",
+    title: "Enjoy ClimaCast!",
     description:
-      "Begin discovering and experiencing the advantages of Climacast. Stay educated, make informed judgments, and be prepared for any weather that may arise. Allow Climacast to be your trustworthy buddy in getting ahead of the weather!",
+      "Begin discovering and experiencing the advantages of ClimaCast. Stay educated, make informed judgments, and be prepared for any weather that may arise. Allow ClimaCast to be your trustworthy buddy in getting ahead of the weather!",
     image: images.enjoy_climacast,
   },
 ];

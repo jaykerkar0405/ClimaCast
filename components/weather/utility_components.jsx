@@ -20,6 +20,22 @@ const UtilityComponents = ({ snapshot_ref, weather_forecast_location }) => {
 
   return (
     <View style={styles.utility_components}>
+      <TouchableOpacity
+        style={styles.utility}
+        onPress={() => {
+          snapshot_ref.current.capture().then((uri) => {
+            Sharing.shareAsync(uri, {
+              dialogTitle: "ClimaCast: Weather Forecast",
+            });
+          });
+        }}
+      >
+        <View style={styles.utility_content}>
+          <Text style={styles.utility_text}>Share</Text>
+          <Feather name="share" style={styles.utility_icon} />
+        </View>
+      </TouchableOpacity>
+
       {weather_location.includes(weather_forecast_location) ? (
         <TouchableOpacity
           style={styles.utility}
@@ -45,22 +61,6 @@ const UtilityComponents = ({ snapshot_ref, weather_forecast_location }) => {
           </View>
         </TouchableOpacity>
       )}
-
-      <TouchableOpacity
-        style={styles.utility}
-        onPress={() => {
-          snapshot_ref.current.capture().then((uri) => {
-            Sharing.shareAsync(uri, {
-              dialogTitle: "Climacast: Weather Forecast",
-            });
-          });
-        }}
-      >
-        <View style={styles.utility_content}>
-          <Text style={styles.utility_text}>Share</Text>
-          <Feather name="share" style={styles.utility_icon} />
-        </View>
-      </TouchableOpacity>
     </View>
   );
 };

@@ -13,6 +13,7 @@ import Favourites from "./favourites";
 import AirQuality from "./air_quality";
 import Navbar from "./navigation/navbar";
 import WalkThroughItem from "./walk_through";
+import SearchLoading from "./loading/search";
 import BottomSheet from "./utils/BottomSheet";
 import WeatherLoader from "./loading/weather";
 import FavouritesLoader from "./loading/favourites";
@@ -48,6 +49,7 @@ export {
   PrivacyPolicy,
   WeatherLoader,
   FavouriteItem,
+  SearchLoading,
   HourlyForecast,
   FavouritesError,
   WalkThroughItem,

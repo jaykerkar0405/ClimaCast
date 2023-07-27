@@ -7,9 +7,7 @@ import { theme, screen_width, screen_height } from "../../../constants";
 const styles = StyleSheet.create({
   favourites: {
     width: 0.87 * screen_width,
-    height: 0.6 * screen_height,
-    paddingBottom: 0.075 * screen_height,
-    backgroundColor: theme().primary_background_color,
+    height: 0.9 * screen_height,
   },
   favourites_header: {
     display: "flex",
@@ -22,6 +20,7 @@ const styles = StyleSheet.create({
   },
   favourites_icon: {
     marginLeft: 5,
+    color: theme().tertiary_text_color,
   },
 });
 

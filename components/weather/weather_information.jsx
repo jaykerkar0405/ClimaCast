@@ -2,10 +2,10 @@
 import { View, Text, Image } from "react-native";
 
 // App's External Imports
-import { Ionicons } from "react-native-vector-icons";
+import { MaterialIcons } from "react-native-vector-icons";
 
 // App's Internal Imports
-const compass = require("../../assets/images/compass.png");
+import { bearing_to_direction } from "../../modules";
 import styles from "../../assets/styles/weather/weather_information";
 
 const WeatherInformation = ({
@@ -26,9 +26,9 @@ const WeatherInformation = ({
     <View style={styles.weather_information}>
       <View style={styles.theoretical_information_container}>
         <View style={styles.theoretical_information}>
-          <Text style={styles.theoretical_information_title}>Longitude</Text>
+          <Text style={styles.theoretical_information_title}>Weather</Text>
           <Text style={styles.theoretical_information_value}>
-            {longitude.toFixed(2)}
+            {weather_condition}
           </Text>
         </View>
 
@@ -40,9 +40,9 @@ const WeatherInformation = ({
         </View>
 
         <View style={styles.theoretical_information}>
-          <Text style={styles.theoretical_information_title}>Weather</Text>
+          <Text style={styles.theoretical_information_title}>Longitude</Text>
           <Text style={styles.theoretical_information_value}>
-            {weather_condition}
+            {longitude.toFixed(2)}
           </Text>
         </View>
 
@@ -74,9 +74,14 @@ const WeatherInformation = ({
       <View style={styles.wind_information_container}>
         <View style={styles.wind_information}>
           <View style={styles.wind_component}>
-            <Text style={styles.wind_component_title}>Gust</Text>
+            <Text style={styles.wind_component_title}>Clouds</Text>
+            <Text style={styles.wind_component_value}>{clouds}</Text>
+          </View>
+
+          <View style={styles.wind_component}>
+            <Text style={styles.wind_component_title}>Visibility</Text>
             <Text style={styles.wind_component_value}>
-              {wind_gust ? `${Math.round((wind_gust * 18) / 5)} km/hr` : "--"}
+              {Math.round(visibility / 1000)} km
             </Text>
           </View>
 
@@ -87,37 +92,24 @@ const WeatherInformation = ({
             </Text>
           </View>
 
-          <View style={styles.wind_component}>
-            <Text style={styles.wind_component_title}>Clouds</Text>
-            <Text style={styles.wind_component_value}>{clouds}</Text>
-          </View>
-
           <View style={[styles.wind_component, { borderBottomWidth: 0 }]}>
-            <Text style={styles.wind_component_title}>Visibility</Text>
+            <Text style={styles.wind_component_title}>Gust</Text>
             <Text style={styles.wind_component_value}>
-              {Math.round(visibility / 1000)} km
+              {wind_gust ? `${Math.round((wind_gust * 18) / 5)} km/hr` : "--"}
             </Text>
           </View>
         </View>
 
         <View style={styles.wind_direction}>
-          <Ionicons
-            size={30}
-            name="caret-up"
-            style={styles.wind_direction_pointer}
+          <Text style={styles.wind_direction_title}>Wind Direction</Text>
+          <MaterialIcons
+            size={50}
+            name={bearing_to_direction(wind_direction).direction_icon}
           />
-
-          <Image
-            source={compass}
-            style={[
-              styles.wind_direction_compass,
-              {
-                transform: [{ rotate: `${270 - wind_direction}deg` }],
-              },
-            ]}
-          />
-
-          <Text style={styles.wind_direction_degree}>{wind_direction}°</Text>
+          <Text style={styles.wind_direction_value}>
+            {wind_direction}° |{" "}
+            {bearing_to_direction(wind_direction).direction_name}
+          </Text>
         </View>
       </View>
     </View>

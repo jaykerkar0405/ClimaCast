@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 // App's Internal Imports
 import { theme } from "../../constants";
 import { Navbar } from "../../components";
-import { Error, SearchResult } from "../../screens";
+import { Error, SearchBar, SearchResult } from "../../screens";
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +20,12 @@ const Navigation = () => {
       <Stack.Screen
         name="Error"
         component={Error}
+        options={{ headerShown: false }}
+      />
+
+      <Stack.Screen
+        name="SearchBar"
+        component={SearchBar}
         options={{ headerShown: false }}
       />
 

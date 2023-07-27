@@ -79,28 +79,21 @@ const styles = StyleSheet.create({
     color: theme().primary_text_color,
   },
   wind_direction: {
-    elevation: 3.75,
     borderRadius: 10,
     paddingVertical: 4,
-    backgroundColor: "#FDFDFD",
+    alignItems: "center",
     width: 0.43 * screen_width,
+    justifyContent: "space-evenly",
     height: 0.228 * screen_height,
+    backgroundColor: theme().quaternary_background_color,
   },
-  wind_direction_pointer: {
-    color: "#ff3600",
-    alignSelf: "center",
-  },
-  wind_direction_compass: {
-    alignSelf: "center",
-    resizeMode: "contain",
-    height: 0.155 * screen_height,
-  },
-  wind_direction_degree: {
-    top: 88.5,
-    left: 67.5,
-    position: "absolute",
+  wind_direction_title: {
+    fontSize: 13,
     fontFamily: "Poppins_500Medium",
-    color: theme().primary_text_color,
+  },
+  wind_direction_value: {
+    fontSize: 12,
+    fontFamily: "Poppins_400Regular",
   },
 });
 

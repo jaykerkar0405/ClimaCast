@@ -1,11 +1,12 @@
 // React Hook Imports
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 // React Native Component Imports
-import { View, Text, Dimensions, Image } from "react-native";
+import { View, Text, Image } from "react-native";
 
 // App's External Imports
 import Animated, {
+  runOnJS,
   withTiming,
   useSharedValue,
   useAnimatedStyle,
@@ -13,7 +14,6 @@ import Animated, {
 } from "react-native-reanimated";
 import { Ionicons } from "react-native-vector-icons";
 import { PanGestureHandler } from "react-native-gesture-handler";
-import { runOnJS } from "react-native-reanimated/lib/reanimated2/core";
 
 // App's Internal Imports
 import {
@@ -21,13 +21,15 @@ import {
   fetch_weather_by_city,
   validate_weather_location,
 } from "../../modules";
+import { screen_width } from "../../constants";
 import { FavouritesLoader } from "../../components";
 import styles from "../../assets/styles/favourites/favourite_item";
 
 const FavouriteItem = ({
-  onDismiss,
+  on_dismiss,
   weather_location,
-  simultaneousHandlers,
+  simultaneous_handlers,
+  saved_weather_location,
 }) => {
   const [weather_forecast, set_weather_forecast] = useState(null);
 
@@ -46,104 +48,97 @@ const FavouriteItem = ({
     };
   }, []);
 
-  const { width: SCREEN_WIDTH } = Dimensions.get("window");
-  const translateX = useSharedValue(0);
+  const translate_x = useSharedValue(0);
   const display_favourite = useSharedValue(1);
-  const opacity = useSharedValue(0);
-  const TRANSLATE_X_THRESHOLD = -SCREEN_WIDTH * 0.3;
+  const translate_x_threshold = -screen_width * 0.3;
 
   const gesture = useAnimatedGestureHandler({
     onActive: (event) => {
-      translateX.value = event.translationX;
-      const is_dismissible = translateX.value < TRANSLATE_X_THRESHOLD;
-
-      if (is_dismissible) {
-        opacity.value = 1;
-      } else {
-        opacity.value = 0;
-      }
+      translate_x.value = event.translationX;
     },
 
     onEnd: () => {
-      const is_dismissible = translateX.value < TRANSLATE_X_THRESHOLD;
+      const is_dismissible = translate_x.value < translate_x_threshold;
 
       if (is_dismissible) {
-        translateX.value = withTiming(-SCREEN_WIDTH);
-        display_favourite.value = withTiming(0);
-        opacity.value = withTiming(0, undefined, (isFinished) => {
-          if (isFinished && onDismiss) {
-            runOnJS(onDismiss)(weather_location);
-          }
-        });
+        if (on_dismiss) {
+          runOnJS(on_dismiss)(weather_location);
+        }
+
+        if (!saved_weather_location.includes(weather_location)) {
+          display_favourite.value = withTiming(0);
+          translate_x.value = withTiming(-screen_width);
+        } else {
+          translate_x.value = withTiming(0);
+        }
       } else {
-        translateX.value = withTiming(0);
+        translate_x.value = withTiming(0);
       }
     },
   });
 
-  const reanimated_style = useAnimatedStyle(() => ({
+  const swipe_animation = useAnimatedStyle(() => ({
     transform: [
       {
-        translateX: translateX.value,
+        translateX: translate_x.value,
       },
     ],
   }));
 
-  const remove_transition = useAnimatedStyle(() => {
-    return { opacity: opacity.value };
+  const remove_icon_animation = useAnimatedStyle(() => {
+    const opacity = withTiming(
+      translate_x.value < translate_x_threshold ? 1 : 0
+    );
+
+    return { opacity };
   });
 
   const dismiss_favourite = useAnimatedStyle(() => {
-    const display = display_favourite.value === 1 ? "flex" : "none";
-
-    return { display };
+    return { opacity: display_favourite.value };
   });
 
   return (
-    <>
-      <Animated.View style={[styles.remove_favourite, remove_transition]}>
-        <Ionicons name="trash-outline" size={30} color="red" />
+    <Animated.View style={dismiss_favourite}>
+      <Animated.View style={[styles.remove_favourite, remove_icon_animation]}>
+        <Ionicons name="trash-outline" size={30} color="white" />
       </Animated.View>
 
       <PanGestureHandler
-        simultaneousHandlers={simultaneousHandlers}
         onGestureEvent={gesture}
+        simultaneousHandlers={simultaneous_handlers}
       >
-        <Animated.View
-          style={[styles.favourites, reanimated_style, dismiss_favourite]}
-        >
+        <Animated.View style={[styles.favourites, swipe_animation]}>
           {weather_forecast ? (
-            <View style={styles.weather_parameters}>
-              <View style={styles.weather_location_container}>
-                <Text style={styles.weather_location}>
-                  {validate_weather_location(weather_location)}
-                </Text>
-              </View>
+            <>
+              <Text style={styles.weather_location}>
+                {validate_weather_location(weather_location)}
+              </Text>
 
-              <View style={styles.weather_icon_container}>
+              <View style={styles.weather_information}>
                 <Image
                   source={{
                     uri: render_weather_icon(weather_forecast.weather[0].icon),
                   }}
                   style={styles.weather_icon}
                 />
-              </View>
 
-              <View style={styles.weather_information}>
                 <Text style={styles.max_temperature}>
-                  {Math.round(weather_forecast.main.temp_max)}°
+                  {Math.round(weather_forecast.main.temp_max)}
                 </Text>
+                <Text style={styles.degree_symbol}>°C</Text>
+
                 <Text style={styles.min_temperature}>
-                  {Math.round(weather_forecast.main.temp_min)}°
+                  {Math.round(weather_forecast.main.temp_min)}
                 </Text>
+                <Text style={[styles.degree_symbol, { right: 10 }]}>°C</Text>
               </View>
-            </View>
+            </>
           ) : (
             <FavouritesLoader />
           )}
         </Animated.View>
       </PanGestureHandler>
-    </>
+    </Animated.View>
   );
 };
 

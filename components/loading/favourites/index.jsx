@@ -8,7 +8,7 @@ const FavouritesLoader = () => {
   return (
     <>
       <ShimmerPlaceholder
-        style={{ width: 100, height: 30, borderRadius: 10 }}
+        style={{ width: 100, height: 30, borderRadius: 10, marginLeft: 15.5 }}
       ></ShimmerPlaceholder>
 
       <ShimmerPlaceholder
@@ -16,7 +16,7 @@ const FavouritesLoader = () => {
       ></ShimmerPlaceholder>
 
       <ShimmerPlaceholder
-        style={{ width: 100, height: 30, borderRadius: 10 }}
+        style={{ width: 100, height: 30, borderRadius: 10, marginRight: 15.5 }}
       ></ShimmerPlaceholder>
     </>
   );

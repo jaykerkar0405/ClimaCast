@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
-    width: 0.5 * screen_width,
+    width: 0.431 * screen_width,
   },
   timeline_date: {
     fontSize: 12.75,

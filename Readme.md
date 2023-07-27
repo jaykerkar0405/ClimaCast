@@ -1,4 +1,4 @@
-🌤️ Climacast
+🌤️ ClimaCast
 
 A modern weather application built with React Native and Expo that provides real-time weather updates and forecasts, along with air quality information. The app also includes a feature to save weather locations for future reference.
 
@@ -29,5 +29,19 @@ Version 1.0.0
 • Weather forecast feature 🌦️
 • Air quality information 🌬️
 • Save weather locations 📍
+
+Version 1.0.1
+• Enhanced Home Screen UI 🎉
+• Modified Bottom Tab Bar Design 🎨
+• Bug Fixes and Performance Boost 🚀
+• Updated Icons and Graphics ✨
+• Polished User Interactions 🤝
+
+Version 1.1.0
+• Fixed bug in deleting favorite locations 🛠️
+• Added new feature: Search Suggestion 🆕
+• Minor UI enhancement of Home Screen 💫
+• Performance improvements for smoother experience 🚀
+• Updated backend for better reliability 🔄
 
 🌤️ Happy Weather Forecasting! 🌈

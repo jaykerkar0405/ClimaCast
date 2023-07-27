@@ -18,8 +18,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     width: 0.265 * screen_width,
-    height: 0.135 * screen_height,
-    backgroundColor: theme().quaternary_background_color,
+    height: 0.125 * screen_height,
+    backgroundColor: theme().secondary_background_color,
   },
   weather_parameter_title: {
     fontSize: 11.5,
@@ -32,13 +32,13 @@ const styles = StyleSheet.create({
     color: theme().primary_text_color,
   },
   weather_parameter_icon: {
-    fontSize: 25,
+    fontSize: 23.5,
     color: "#414141",
     marginVertical: 7.5,
   },
   weather_parameter_degree_symbol: {
     right: 26,
-    bottom: 17,
+    bottom: 13.5,
     fontSize: 10,
     position: "absolute",
     fontFamily: "Poppins_400Regular",

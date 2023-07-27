@@ -12,10 +12,15 @@ import {
   WeatherInformation,
 } from "../../components";
 
-const Weather = ({ weather_forecast, future_forecast }) => {
+const Weather = ({
+  future_forecast,
+  weather_location,
+  weather_forecast,
+  is_timeline_active,
+  set_is_timeline_active,
+}) => {
   const snapshot_ref = useRef(null);
   const [timeline_id, set_timeline_id] = useState(1);
-  const [is_timeline_active, set_is_timeline_active] = useState(false);
 
   return (
     <>
@@ -42,17 +47,17 @@ const Weather = ({ weather_forecast, future_forecast }) => {
 
       <HourlyForecast future_forecast={future_forecast.list} offset={0} />
 
-      <UtilityComponents
-        snapshot_ref={snapshot_ref}
-        weather_forecast_location={weather_forecast.name}
-      />
-
       <WeatherParameters
         weather_forecast={{
           sunset: weather_forecast.sys.sunset,
           sunrise: weather_forecast.sys.sunrise,
           feels_like: weather_forecast.main.feels_like,
         }}
+      />
+
+      <UtilityComponents
+        snapshot_ref={snapshot_ref}
+        weather_forecast_location={weather_location}
       />
 
       <WeatherInformation

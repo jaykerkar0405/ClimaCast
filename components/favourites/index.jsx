@@ -1,5 +1,5 @@
 // React Hook Imports
-import { useContext, useRef, useCallback } from "react";
+import { useRef, useContext } from "react";
 
 // React Native Component Imports
 import { View, Text, Pressable } from "react-native";
@@ -12,58 +12,61 @@ import {
 import { Ionicons } from "react-native-vector-icons";
 
 // App's Internal Imports
-import { theme } from "../../constants";
+import { screen_height } from "../../constants";
 import { WeatherContext } from "../../contexts";
 import styles from "../../assets/styles/favourites";
 import { FavouriteItem, FavouritesError } from "../../components";
 
-const Favourites = ({ navigation }) => {
+const Favourites = ({ navigation: { navigate } }) => {
   const scroll_ref = useRef(null);
   const { weather_location, remove_weather_location } =
     useContext(WeatherContext);
 
-  const on_dismiss = useCallback((location) => {
+  const on_dismiss = (location) => {
     remove_weather_location(location);
-  }, []);
+  };
 
   return (
     <View style={styles.favourites}>
       <View style={styles.favourites_header}>
         <Text style={styles.favourites_title}>My Favourites </Text>
-        <Ionicons
-          name="heart"
-          style={styles.favourites_icon}
-          size={24}
-          color={theme().tertiary_text_color}
-        />
+        <Ionicons size={24} name="heart" style={styles.favourites_icon} />
       </View>
 
-      <GestureHandlerRootView>
-        <ScrollView ref={scroll_ref} showsVerticalScrollIndicator={false}>
-          {weather_location.length > 0 ? (
-            weather_location.map((item, index) => {
+      {weather_location.length > 0 ? (
+        <GestureHandlerRootView>
+          <ScrollView
+            ref={scroll_ref}
+            contentContainerStyle={{
+              flexGrow: 1,
+              paddingBottom: 0.315 * screen_height,
+            }}
+            showsVerticalScrollIndicator={false}
+          >
+            {weather_location.map((element, index) => {
               return (
                 <Pressable
+                  key={index}
                   onPress={() => {
-                    navigation.navigate("SearchResult", {
-                      city: item,
+                    navigate("SearchResult", {
+                      city: element,
                     });
                   }}
-                  key={index}
                 >
                   <FavouriteItem
-                    weather_location={item}
-                    onDismiss={on_dismiss}
-                    simultaneousHandlers={scroll_ref}
+                    on_dismiss={on_dismiss}
+                    weather_location={element}
+                    simultaneous_handlers={scroll_ref}
+                    saved_weather_location={weather_location}
                   />
                 </Pressable>
               );
-            })
-          ) : (
-            <FavouritesError />
-          )}
-        </ScrollView>
-      </GestureHandlerRootView>
+            })}
+          </ScrollView>
+        </GestureHandlerRootView>
+      ) : (
+        <FavouritesError />
+      )}
     </View>
   );
 };

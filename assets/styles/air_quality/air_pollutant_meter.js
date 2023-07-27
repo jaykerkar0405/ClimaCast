@@ -6,7 +6,7 @@ import { theme, screen_height } from "../../../constants";
 
 const styles = StyleSheet.create({
   air_pollutant_meter_container: {
-    marginTop:30,
+    marginTop: 30,
   },
   air_pollutant_meter: {
     marginTop: 20,

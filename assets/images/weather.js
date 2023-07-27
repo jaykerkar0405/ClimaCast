@@ -40,12 +40,12 @@ const images = [
     uri: "https://res.cloudinary.com/bytewise0405/image/upload/v1688122122/ClimaCast/broken_clouds_jwnkiy.png",
   },
   {
-    id: "9d",
+    id: "09d",
     weather_condition: "shower_rain",
     uri: "https://res.cloudinary.com/bytewise0405/image/upload/v1686812360/ClimaCast/shower_rain_pf6tpn.png",
   },
   {
-    id: "9n",
+    id: "09n",
     weather_condition: "shower_rain",
     uri: "https://res.cloudinary.com/bytewise0405/image/upload/v1686812360/ClimaCast/shower_rain_pf6tpn.png",
   },

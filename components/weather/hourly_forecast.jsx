@@ -22,7 +22,17 @@ const HourlyForecast = ({ future_forecast, offset }) => {
       }
     });
 
-    set_hourly_forecast(filtered_future_forecast);
+    if (filtered_future_forecast.length > 0) {
+      set_hourly_forecast(filtered_future_forecast);
+    } else {
+      const filtered_future_forecast = future_forecast.filter((element) => {
+        if (compare_timezone(element.dt, offset + 1) === true) {
+          return element;
+        }
+      });
+
+      set_hourly_forecast(filtered_future_forecast);
+    }
   };
 
   useEffect(() => {

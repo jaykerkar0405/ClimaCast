@@ -1,9 +1,6 @@
 // React Native Component Imports
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
 
-// React Hook Imports
-import { useState } from "react";
-
 // App's Internal Imports
 import { render_timeline } from "../../modules";
 import { screen_height } from "../../constants";

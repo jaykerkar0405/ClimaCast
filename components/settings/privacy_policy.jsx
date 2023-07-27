@@ -42,9 +42,9 @@ const PrivacyPolicy = () => {
           common control with a party, where "control" means ownership of 50% or
           more of the shares, equity interest or other securities entitled to
           vote for election of directors or other managing authority.
-          Application refers to Climacast, the software program provided by the
+          Application refers to ClimaCast, the software program provided by the
           Company. Company (referred to as either "the Company", "We", "Us" or
-          "Our" in this Agreement) refers to Climacast. Country refers to:
+          "Our" in this Agreement) refers to ClimaCast. Country refers to:
           Maharashtra, India Device means any device that can access the Service
           such as a computer, a cellphone or a digital tablet. Personal Data is
           any information that relates to an identified or identifiable

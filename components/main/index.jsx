@@ -15,10 +15,11 @@ import {
 import {
   fetch_air_quality,
   fetch_weather_by_city,
-  redirect_to_error_page,
+  redirect_to_error_screen,
   fetch_weather_by_geolocation,
   fetch_hourly_weather_by_city,
   fetch_hourly_weather_by_geolocation,
+  fetch_weather_location_by_geolocation,
 } from "../../modules";
 import { screen_height } from "../../constants";
 import { WalkThroughContext } from "../../contexts";
@@ -31,8 +32,10 @@ const Main = ({ type, identifier, navigation }) => {
   const [future_forecast, set_future_forecast] = useState(null);
   const { walk_through_status } = useContext(WalkThroughContext);
   const [weather_forecast, set_weather_forecast] = useState(null);
+  const [weather_location, set_weather_location] = useState(null);
+  const [is_timeline_active, set_is_timeline_active] = useState(false);
   const [scroll_view_height, set_scroll_view_height] = useState(
-    1.725 * screen_height
+    1.685 * screen_height
   );
 
   const fetch_air_quality_forecast = async (latitude, longitude) => {
@@ -41,7 +44,7 @@ const Main = ({ type, identifier, navigation }) => {
     if (fetched_air_quality.list) {
       set_air_quality(fetched_air_quality);
     } else {
-      redirect_to_error_page(
+      redirect_to_error_screen(
         navigation,
         "Home",
         "We are unable to search weather forecast for the city name entered",
@@ -59,6 +62,12 @@ const Main = ({ type, identifier, navigation }) => {
 
       if (fetched_weather_forecast.cod === 200) {
         set_weather_forecast(fetched_weather_forecast);
+        set_weather_location(
+          await fetch_weather_location_by_geolocation(
+            identifier.latitude,
+            identifier.longitude
+          )
+        );
 
         const fetched_hourly_weather_forecast =
           await fetch_hourly_weather_by_geolocation(
@@ -71,7 +80,7 @@ const Main = ({ type, identifier, navigation }) => {
           set_loading(false);
           fetch_air_quality_forecast(identifier.latitude, identifier.longitude);
         } else {
-          redirect_to_error_page(
+          redirect_to_error_screen(
             navigation,
             "Home",
             "We are unable to search weather forecast for the city name entered",
@@ -79,7 +88,7 @@ const Main = ({ type, identifier, navigation }) => {
           );
         }
       } else {
-        redirect_to_error_page(
+        redirect_to_error_screen(
           navigation,
           "Home",
           "We are unable to search weather forecast for the city name entered",
@@ -95,6 +104,12 @@ const Main = ({ type, identifier, navigation }) => {
 
       if (fetched_weather_forecast.cod === 200) {
         set_weather_forecast(fetched_weather_forecast);
+        set_weather_location(
+          await fetch_weather_location_by_geolocation(
+            fetched_weather_forecast.coord.lat,
+            fetched_weather_forecast.coord.lon
+          )
+        );
 
         const fetched_hourly_weather_forecast =
           await fetch_hourly_weather_by_city(identifier.city);
@@ -107,7 +122,7 @@ const Main = ({ type, identifier, navigation }) => {
             fetched_weather_forecast.coord.lon
           );
         } else {
-          redirect_to_error_page(
+          redirect_to_error_screen(
             navigation,
             "Home",
             "We are unable to search weather forecast for the city name entered",
@@ -115,7 +130,7 @@ const Main = ({ type, identifier, navigation }) => {
           );
         }
       } else {
-        redirect_to_error_page(
+        redirect_to_error_screen(
           navigation,
           "Home",
           "We are unable to search weather forecast for the city name entered",
@@ -136,13 +151,21 @@ const Main = ({ type, identifier, navigation }) => {
 
   useEffect(() => {
     if (active_tab === "weather") {
-      set_scroll_view_height(1.725 * screen_height);
+      set_scroll_view_height(1.685 * screen_height);
     }
 
     if (active_tab === "air_quality") {
       set_scroll_view_height(1.135 * screen_height);
     }
   }, [active_tab]);
+
+  useEffect(() => {
+    if (is_timeline_active) {
+      set_scroll_view_height(1.93 * screen_height);
+    } else {
+      set_scroll_view_height(1.685 * screen_height);
+    }
+  }, [is_timeline_active]);
 
   return (
     <>
@@ -161,7 +184,7 @@ const Main = ({ type, identifier, navigation }) => {
           showsVerticalScrollIndicator={false}
         >
           <Header
-            weather_location={weather_forecast.name}
+            weather_location={weather_location}
             weather_icon={weather_forecast.weather[0].icon}
             weather_condition={weather_forecast.weather[0].main}
           />
@@ -171,7 +194,10 @@ const Main = ({ type, identifier, navigation }) => {
           {active_tab === "weather" ? (
             <Weather
               future_forecast={future_forecast}
+              weather_location={weather_location}
               weather_forecast={weather_forecast}
+              is_timeline_active={is_timeline_active}
+              set_is_timeline_active={set_is_timeline_active}
             />
           ) : (
             <AirQuality air_quality={air_quality} />

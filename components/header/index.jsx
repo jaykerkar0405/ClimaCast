@@ -5,15 +5,11 @@ import { View, Text, Image } from "react-native";
 import { Ionicons } from "react-native-vector-icons";
 
 // App's Internal Imports
-import {
-  render_weather_icon,
-  render_weather_message,
-  validate_weather_location,
-} from "../../modules";
 import { theme } from "../../constants";
 import styles from "../../assets/styles/header";
+import { render_weather_icon, render_weather_message } from "../../modules";
 
-const Header = ({ weather_location, weather_icon, weather_condition }) => {
+const Header = ({ weather_icon, weather_location, weather_condition }) => {
   return (
     <View style={styles.header}>
       <View style={styles.left_panel}>
@@ -46,9 +42,7 @@ const Header = ({ weather_location, weather_icon, weather_condition }) => {
           name="ios-location-sharp"
           color={theme().tertiary_text_color}
         />
-        <Text style={styles.right_panel_title}>
-          {validate_weather_location(weather_location)}
-        </Text>
+        <Text style={styles.right_panel_title}>{weather_location}</Text>
       </View>
     </View>
   );

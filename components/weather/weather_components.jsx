@@ -26,10 +26,7 @@ const WeatherComponents = ({
 }) => {
   return (
     <ViewShot
-      style={[
-        styles.weather,
-        is_timeline_active && { marginTop: 0, marginBottom: -15 },
-      ]}
+      style={[styles.weather, is_timeline_active && { marginTop: 0 }]}
       ref={snapshot_ref}
     >
       <View style={styles.upper_panel}>

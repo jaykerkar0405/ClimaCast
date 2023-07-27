@@ -6,6 +6,7 @@ dist/
 *.jks
 .expo/
 *.orig.*
+.vscode/
 web-build/
 npm-debug.*
 node_modules/

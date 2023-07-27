@@ -9,14 +9,14 @@ const styles = StyleSheet.create({
     marginTop: 15,
     display: "flex",
     flexDirection: "row",
-    width: 0.92 * screen_width,
+    width: 0.9 * screen_width,
     justifyContent: "space-between",
   },
   utility: {
     borderRadius: 10,
     width: 0.425 * screen_width,
     height: 0.06 * screen_height,
-    backgroundColor: theme().secondary_background_color,
+    backgroundColor: theme().quaternary_background_color,
   },
   utility_content: {
     display: "flex",

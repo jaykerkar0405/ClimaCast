@@ -12,17 +12,16 @@ const styles = StyleSheet.create({
     backgroundColor: theme().primary_background_color,
   },
   header: {
-    display: "flex",
     alignItems: "center",
     marginTop: 0.025 * screen_height,
   },
-  heading: {
+  title: {
     fontSize: 23.5,
     fontFamily: "Poppins_600SemiBold",
     color: theme().primary_text_color,
   },
   description: {
-    marginTop: -3,
+    marginTop: -5,
     fontSize: 13.75,
     textAlign: "center",
     marginHorizontal: 10,
@@ -30,12 +29,11 @@ const styles = StyleSheet.create({
     color: theme().secondary_text_color,
   },
   search: {
-    display: "flex",
-    marginVertical: 25,
+    marginVertical: 20,
     flexDirection: "row",
   },
   search_bar: {
-    elevation: 3.5,
+    elevation: 3,
     fontSize: 14.75,
     paddingTop: 7.5,
     paddingLeft: 16,
@@ -48,7 +46,7 @@ const styles = StyleSheet.create({
   },
   search_icon: {
     borderRadius: 10,
-    paddingHorizontal: 13,
+    textAlign: "center",
     paddingVertical: 10.5,
     backgroundColor: "#9BE0CB",
     width: 0.125 * screen_width,

@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   tab_bar: {
     elevation: 0,
     width: screen_width,
-    height: 0.115 * screen_height,
+    height: 0.11 * screen_height,
     backgroundColor: theme().secondary_background_color,
   },
   tab: {
@@ -44,16 +44,14 @@ const styles = StyleSheet.create({
   },
   focused_title: {
     fontSize: 12,
-    marginTop: 2.5,
     position: "absolute",
-    bottom: 0.0145 * screen_height,
+    bottom: 0.0115 * screen_height,
     fontFamily: "Poppins_500Medium",
     color: theme().primary_text_color,
   },
   unfocused_title: {
-    bottom: 12,
+    bottom: 9.5,
     fontSize: 12,
-    marginTop: 12,
     color: "#3b5681",
     position: "absolute",
     fontFamily: "Poppins_400Regular",

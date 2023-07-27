@@ -14,6 +14,10 @@ const AirPollutantConcentration = ({ air_pollutant_components }) => {
   useEffect(() => {
     set_air_pollutant_concentration([
       {
+        pollutant_name: "O₃",
+        pollutant_value: air_pollutant_components.o3,
+      },
+      {
         pollutant_name: "CO",
         pollutant_value: air_pollutant_components.co,
       },
@@ -26,24 +30,20 @@ const AirPollutantConcentration = ({ air_pollutant_components }) => {
         pollutant_value: air_pollutant_components.no2,
       },
       {
-        pollutant_name: "O₃",
-        pollutant_value: air_pollutant_components.o3,
-      },
-      {
         pollutant_name: "SO₂",
         pollutant_value: air_pollutant_components.so2,
       },
       {
-        pollutant_name: "pm2.5",
-        pollutant_value: air_pollutant_components.pm2_5,
+        pollutant_name: "NH₃",
+        pollutant_value: air_pollutant_components.nh3,
       },
       {
         pollutant_name: "pm10",
         pollutant_value: air_pollutant_components.pm10,
       },
       {
-        pollutant_name: "NH₃",
-        pollutant_value: air_pollutant_components.nh3,
+        pollutant_name: "pm2.5",
+        pollutant_value: air_pollutant_components.pm2_5,
       },
     ]);
   }, []);

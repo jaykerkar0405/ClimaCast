@@ -37,7 +37,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "row",
     paddingHorizontal: 10,
-    marginLeft: 0.125 * screen_width,
+    justifyContent: "center",
+    width: 0.4 * screen_width,
+    marginLeft: 0.099 * screen_width,
     borderColor: theme().secondary_text_color,
   },
   right_panel_title: {

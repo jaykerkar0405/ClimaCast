@@ -32,7 +32,7 @@ const TermsAndConditions = () => {
           singular or in plural.{"\n"}
           {"\n"}For the purposes of these Terms and Conditions: Application
           means the software program provided by the Company downloaded by You
-          on any electronic device, named Climacast Application Store means the
+          on any electronic device, named ClimaCast Application Store means the
           digital distribution service operated and developed by Apple Inc.
           (Apple App Store) or Google Inc. (Google Play Store) in which the
           Application has been downloaded. Affiliate means an entity that
@@ -41,7 +41,7 @@ const TermsAndConditions = () => {
           interest or other securities entitled to vote for election of
           directors or other managing authority. Country refers to: Maharashtra,
           India Company (referred to as either "the Company", "We", "Us" or
-          "Our" in this Agreement) refers to Climacast. Device means any device
+          "Our" in this Agreement) refers to ClimaCast. Device means any device
           that can access the Service such as a computer, a cellphone or a
           digital tablet. Service refers to the Application. Terms and
           Conditions (also referred as "Terms") mean these Terms and Conditions
