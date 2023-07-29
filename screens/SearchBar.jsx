@@ -57,7 +57,7 @@ const SearchBar = ({ navigation: { goBack, navigate } }) => {
     if (saved_authentication_token) {
       const timespan = calculate_timespan(saved_authentication_token.timestamp);
 
-      if (saved_authentication_token.expires_in > timespan) {
+      if (saved_authentication_token.expires_in < timespan) {
         set_authentication_token(
           saved_authentication_token.authentication_token
         );

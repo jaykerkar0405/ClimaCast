@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   },
   walk_through_description: {
     marginTop: 5,
-    fontSize: 12.75,
+    fontSize: 12.5,
     lineHeight: 22.5,
     maxWidth: 0.9 * screen_width,
     fontFamily: "Poppins_400Regular",

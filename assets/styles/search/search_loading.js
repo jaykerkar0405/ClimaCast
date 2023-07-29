@@ -7,7 +7,7 @@ import { screen_height } from "../../../constants";
 const styles = StyleSheet.create({
   search_loading_animation: {
     alignSelf: "center",
-    height: 0.725 * screen_height,
+    height: 0.675* screen_height,
   },
 });
 

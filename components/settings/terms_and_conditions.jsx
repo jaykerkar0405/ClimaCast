@@ -5,15 +5,15 @@ import { View, Text, Linking, Pressable } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
 // App's Internal Imports
-import styles from "../../assets/styles/terms_and_conditions";
 import { Footer } from "../../components";
+import styles from "../../assets/styles/terms_and_conditions";
 
 const TermsAndConditions = () => {
   return (
     <ScrollView
       style={styles.container}
-      contentContainerStyle={{ flexGrow: 1 }}
       showsVerticalScrollIndicator={false}
+      contentContainerStyle={{ flexGrow: 1 }}
     >
       <View style={styles.terms}>
         <Text style={styles.terms_title}>Terms & Conditions</Text>

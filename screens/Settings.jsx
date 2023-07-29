@@ -10,16 +10,9 @@ import { MaterialCommunityIcons, Ionicons } from "react-native-vector-icons";
 
 // App's Internal Imports
 import styles from "../assets/styles/settings";
-import {
-  Theme,
-  Footer,
-  BottomSheet,
-  PrivacyPolicy,
-  OpenSourceLicences,
-  TermsAndConditions,
-} from "../components";
+import { Theme, Footer, BottomSheet } from "../components";
 
-const Settings = () => {
+const Settings = ({ navigation: { navigate } }) => {
   const bottom_sheet_ref = useRef(null);
   const [children, set_children] = useState(null);
 
@@ -30,7 +23,7 @@ const Settings = () => {
     if (is_active) {
       bottom_sheet_ref.current.scroll_to(0);
     } else {
-      bottom_sheet_ref.current.scroll_to(-520);
+      bottom_sheet_ref.current.scroll_to(-450);
     }
   }, []);
 
@@ -45,18 +38,14 @@ const Settings = () => {
             }}
             style={styles.setting}
           >
-            <View>
+            <View style={styles.setting_information}>
               <MaterialCommunityIcons
-                name="brush-variant"
                 color="#7149C6"
+                name="brush-variant"
                 style={styles.setting_icon}
               />
-            </View>
 
-            <View>
-              <Text style={styles.setting_name}>
-                Theme{"                            "}
-              </Text>
+              <Text style={styles.setting_name}>Theme</Text>
             </View>
 
             <View>
@@ -69,89 +58,67 @@ const Settings = () => {
           <Text style={styles.setting_title}>Legal</Text>
           <TouchableOpacity
             onPress={() => {
-              toggle_bottom_sheet("privacy_policy");
+              navigate("PrivacyPolicy");
             }}
             style={styles.setting}
           >
-            <View>
+            <View style={styles.setting_information}>
               <Ionicons
-                name="lock-closed"
+                size={25}
                 color="#0EA293"
+                name="lock-closed"
                 style={styles.setting_icon}
-                size={25}
               />
+
+              <Text style={styles.setting_name}>Privacy Policy</Text>
             </View>
 
             <View>
-              <Text style={styles.setting_name}>
-                Privacy Policy{"                "}
-              </Text>
-            </View>
-
-            <View>
-              <Ionicons
-                name="chevron-forward"
-                style={styles.setting_button}
-                size={25}
-              />
+              <Ionicons name="chevron-forward" style={styles.setting_button} />
             </View>
           </TouchableOpacity>
 
           <TouchableOpacity
             onPress={() => {
-              toggle_bottom_sheet("terms_and_conditions");
+              navigate("TermsAndConditions");
             }}
             style={styles.setting}
           >
-            <View>
+            <View style={styles.setting_information}>
               <Ionicons
+                size={25}
                 name="document"
                 color="#2F58CD"
                 style={styles.setting_icon}
-                size={25}
               />
+
+              <Text style={styles.setting_name}>Terms & Conditions</Text>
             </View>
 
             <View>
-              <Text style={styles.setting_name}>
-                Terms & Conditions{"     "}
-              </Text>
-            </View>
-
-            <View>
-              <Ionicons
-                name="chevron-forward"
-                style={styles.setting_button}
-                size={25}
-              />
+              <Ionicons name="chevron-forward" style={styles.setting_button} />
             </View>
           </TouchableOpacity>
 
           <TouchableOpacity
             onPress={() => {
-              toggle_bottom_sheet("open_source_licences");
+              navigate("OpenSourceLicences");
             }}
-            style={styles.setting}
+            style={[styles.setting, { marginBottom: 20 }]}
           >
-            <View>
+            <View style={styles.setting_information}>
               <Ionicons
+                size={25}
                 name="terminal"
                 color="#DB005B"
                 style={styles.setting_icon}
-                size={25}
               />
-            </View>
 
-            <View>
               <Text style={styles.setting_name}>Open Source Licences</Text>
             </View>
 
             <View>
-              <Ionicons
-                name="chevron-forward"
-                style={styles.setting_button}
-                size={25}
-              />
+              <Ionicons name="chevron-forward" style={styles.setting_button} />
             </View>
           </TouchableOpacity>
         </View>
@@ -161,9 +128,6 @@ const Settings = () => {
 
       <BottomSheet ref={bottom_sheet_ref}>
         {children === "theme" && <Theme />}
-        {children === "privacy_policy" && <PrivacyPolicy />}
-        {children === "terms_and_conditions" && <TermsAndConditions />}
-        {children === "open_source_licences" && <OpenSourceLicences />}
       </BottomSheet>
     </GestureHandlerRootView>
   );

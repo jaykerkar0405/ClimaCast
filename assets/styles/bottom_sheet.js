@@ -18,8 +18,8 @@ const styles = StyleSheet.create({
     width: 75,
     height: 5,
     borderRadius: 5,
-    alignSelf: "center",
     marginVertical: 15,
+    alignSelf: "center",
     backgroundColor: theme().secondary_text_color,
   },
 });

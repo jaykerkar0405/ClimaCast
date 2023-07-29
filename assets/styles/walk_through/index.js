@@ -13,11 +13,11 @@ const styles = StyleSheet.create({
   },
   walk_through_container: {
     height: 0.75 * screen_height,
-    marginTop: 0.075 * screen_height,
+    marginTop: 0.05 * screen_height,
   },
   pagination_container: {
     width: screen_width,
-    height: 0.19 * screen_height,
+    height: 0.215 * screen_height,
   },
   pagination: {
     flexDirection: "row",
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   navigation_container: {
     left: 0,
     right: 0,
-    bottom: "5%",
+    bottom: "7.5%",
     alignItems: "center",
     position: "absolute",
     justifyContent: "center",

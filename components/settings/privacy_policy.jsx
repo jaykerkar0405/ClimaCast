@@ -5,15 +5,15 @@ import { View, Text, Linking, Pressable } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
 // App's Internal Imports
-import styles from "../../assets/styles/privacy_policy";
 import { Footer } from "../../components";
+import styles from "../../assets/styles/privacy_policy";
 
 const PrivacyPolicy = () => {
   return (
     <ScrollView
       style={styles.container}
-      contentContainerStyle={{ flexGrow: 1 }}
       showsVerticalScrollIndicator={false}
+      contentContainerStyle={{ flexGrow: 1 }}
     >
       <View style={styles.policy}>
         <Text style={styles.policy_title}>Privacy Policy</Text>

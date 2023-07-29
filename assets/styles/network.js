@@ -6,39 +6,30 @@ import { theme, screen_width, screen_height } from "../../constants";
 
 const styles = StyleSheet.create({
   main_container: {
-    display: "flex",
     alignItems: "center",
     width: screen_width,
     height: screen_height,
     justifyContent: "center",
     backgroundColor: theme().primary_background_color,
   },
-  network_unavailable_container: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  network_unavailable_title: {
-    fontSize: 23.75,
+  network_error_title: {
+    fontSize: 23,
     textAlign: "center",
     fontFamily: "Poppins_500Medium",
     color: theme().primary_text_color,
   },
-  network_unavailable_description: {
-    fontSize: 14.25,
+  network_error_description: {
+    fontSize: 14,
     textAlign: "center",
     fontFamily: "Poppins_400Regular",
     color: theme().secondary_text_color,
   },
-  network_unavailable_image: {
-    marginTop: -60,
-    resizeMode: "contain",
-    width: 0.8 * screen_width,
-    height: 0.7 * screen_height,
+  network_error_animation: {
+    marginTop: 20,
+    height: 0.375 * screen_height,
   },
   try_again_container: {
-    bottom: "5%",
-    position: "absolute",
+    marginTop: 0.1 * screen_height,
   },
   try_again_button: {
     display: "flex",

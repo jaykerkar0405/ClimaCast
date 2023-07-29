@@ -1,15 +1,16 @@
 // React Native Component Imports
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 
 // React Hook Imports
 import { useContext } from "react";
 
 // App's External Imports
+import LottieView from "lottie-react-native";
 import { Feather, Ionicons } from "react-native-vector-icons";
 
 // App's Internal Imports
 import styles from "../assets/styles/network";
-const network_unavailable_image = require("../assets/images/network_unavailable.png");
+const network_error = require("../assets/images/network_error.json");
 
 // App's Context Imports
 import { NetworkContext } from "../contexts";
@@ -19,22 +20,22 @@ const Network = () => {
 
   return (
     <View style={styles.main_container}>
-      <View style={styles.network_unavailable_container}>
-        <Text style={styles.network_unavailable_title}>
-          Failed To Connect{"  "}
-          <Feather name="wifi-off" size={25} color="#E74646" />
-        </Text>
+      <Text style={styles.network_error_title}>
+        Failed To Connect{"  "}
+        <Feather name="wifi-off" size={25} color="#E74646" />
+      </Text>
 
-        <Text style={styles.network_unavailable_description}>
-          Please check your internet connection. It looks like you're not
-          connected to the internet.
-        </Text>
+      <Text style={styles.network_error_description}>
+        Please check your internet connection. It looks like you're not
+        connected to the internet.
+      </Text>
 
-        <Image
-          source={network_unavailable_image}
-          style={styles.network_unavailable_image}
-        />
-      </View>
+      <LottieView
+        loop
+        autoPlay
+        source={network_error}
+        style={styles.network_error_animation}
+      />
 
       <View style={styles.try_again_container}>
         <TouchableOpacity

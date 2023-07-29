@@ -8,9 +8,8 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { Ionicons } from "react-native-vector-icons";
 
 // App's Internal Imports
-import styles from "../../assets/styles/theme";
 import { ThemeContext } from "../../contexts";
-import { Footer } from "../../components";
+import styles from "../../assets/styles/theme";
 
 const Theme = () => {
   const { theme, change_theme } = useContext(ThemeContext);
@@ -24,11 +23,18 @@ const Theme = () => {
             change_theme("system");
           }}
         >
-          <Ionicons name="contrast" style={styles.theme_icon} color="#179881" />
-          <Text style={styles.theme_name}>Follow System</Text>
+          <View style={styles.theme_information}>
+            <Ionicons
+              name="contrast"
+              style={styles.theme_icon}
+              color="#179881"
+            />
+            <Text style={styles.theme_name}>Follow System</Text>
+          </View>
+
           <Ionicons
-            name={theme === "system" ? "radio-button-on" : "radio-button-off"}
             style={styles.radio_button}
+            name={theme === "system" ? "radio-button-on" : "radio-button-off"}
           />
         </TouchableOpacity>
 
@@ -38,11 +44,14 @@ const Theme = () => {
             change_theme("light");
           }}
         >
-          <Ionicons name="sunny" style={styles.theme_icon} color="#CCCC00" />
-          <Text style={styles.theme_name}>Light{"                 "}</Text>
+          <View style={styles.theme_information}>
+            <Ionicons name="sunny" style={styles.theme_icon} color="#CCCC00" />
+            <Text style={styles.theme_name}>Light</Text>
+          </View>
+
           <Ionicons
-            name={theme === "light" ? "radio-button-on" : "radio-button-off"}
             style={styles.radio_button}
+            name={theme === "light" ? "radio-button-on" : "radio-button-off"}
           />
         </TouchableOpacity>
 
@@ -52,21 +61,22 @@ const Theme = () => {
             change_theme("dark");
           }}
         >
-          <Ionicons name="moon" style={styles.theme_icon} color="#146C94" />
-          <Text style={styles.theme_name}>Dark{"                  "}</Text>
+          <View style={styles.theme_information}>
+            <Ionicons name="moon" style={styles.theme_icon} color="#146C94" />
+            <Text style={styles.theme_name}>Dark</Text>
+          </View>
+
           <Ionicons
-            name={theme === "dark" ? "radio-button-on" : "radio-button-off"}
             style={styles.radio_button}
+            name={theme === "dark" ? "radio-button-on" : "radio-button-off"}
           />
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.information}>
+      <Text style={styles.theme_note}>
         Note :- Follow System is only supported on operating systems that allow
         you to control the system-wide color scheme.
       </Text>
-
-      <Footer />
     </View>
   );
 };

@@ -6,7 +6,6 @@ import { theme, screen_width, screen_height } from "../../constants";
 
 const styles = StyleSheet.create({
   main_container: {
-    display: "flex",
     width: screen_width,
     alignItems: "center",
     height: screen_height,
@@ -14,44 +13,40 @@ const styles = StyleSheet.create({
     backgroundColor: theme().primary_background_color,
   },
   error_container: {
-    display: "flex",
     alignItems: "center",
-    justifyContent: "center",
+    height: 0.6 * screen_height,
+    justifyContent: "space-evenly",
   },
   error_title: {
-    display: "flex",
     flexDirection: "row",
     alignItems: "center",
   },
   error_title_text: {
-    fontSize: 23.75,
+    fontSize: 23.5,
     textAlign: "center",
-    marginHorizontal: 20,
+    marginHorizontal: 30,
     fontFamily: "Poppins_500Medium",
     color: theme().primary_text_color,
   },
   error_icon: {
     top: 48,
-    right: 30,
+    right: 45,
     position: "absolute",
   },
   error_description: {
-    fontSize: 14.25,
+    marginTop: 5,
+    fontSize: 14,
     textAlign: "center",
     marginHorizontal: 10,
     paddingHorizontal: 10,
     fontFamily: "Poppins_400Regular",
     color: theme().secondary_text_color,
   },
-  error_image: {
-    marginTop: -60,
-    resizeMode: "contain",
-    width: 0.8 * screen_width,
-    height: 0.7 * screen_height,
+  error_animation: {
+    height: 0.4 * screen_height,
   },
   navigation_container: {
-    bottom: "5%",
-    position: "absolute",
+    marginTop: 0.05 * screen_height,
   },
   navigation_button: {
     display: "flex",

@@ -45,7 +45,7 @@ const App = () => {
     Poppins_600SemiBold,
   });
 
-  const onLayoutRootView = useCallback(async () => {
+  const on_layout_root_view = useCallback(async () => {
     if (fonts) {
       await SplashScreen.hideAsync();
     }
@@ -60,7 +60,10 @@ const App = () => {
       <WeatherState>
         <NetworkState>
           <ThemeState>
-            <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
+            <SafeAreaView
+              style={styles.container}
+              onLayout={on_layout_root_view}
+            >
               <NavigationContainer theme={theme_configuration}>
                 <StatusBar
                   translucent={false}

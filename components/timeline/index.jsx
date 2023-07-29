@@ -60,15 +60,18 @@ const Timeline = ({
           {is_timeline_active ? (
             <>
               <Text style={styles.timeline_drawer_title}>collapse</Text>
-              <Ionicons name="chevron-up" style={styles.timeline_drawer_icon} />
+              <Ionicons
+                name="chevron-down"
+                style={styles.timeline_drawer_icon}
+              />
             </>
           ) : (
             <>
-              <Text style={[styles.timeline_drawer_title, { marginLeft: 7.5 }]}>
+              <Text style={[styles.timeline_drawer_title, { marginLeft: 8 }]}>
                 expand
               </Text>
               <Ionicons
-                name="chevron-down"
+                name="chevron-forward"
                 style={styles.timeline_drawer_icon}
               />
             </>

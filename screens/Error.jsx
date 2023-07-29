@@ -1,12 +1,13 @@
 // React Native Component Imports
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 
 // App's External Imports
+import LottieView from "lottie-react-native";
 import { MaterialIcons, Ionicons } from "react-native-vector-icons";
 
 // App's Internal Imports
-import images from "../assets/images/error";
 import styles from "../assets/styles/error";
+const error = require("../assets/images/error.json");
 
 const Error = ({
   route: {
@@ -21,21 +22,28 @@ const Error = ({
   return (
     <View style={styles.main_container}>
       <View style={styles.error_container}>
-        <View style={styles.error_title}>
-          <Text style={styles.error_title_text}>
-            Oh No! Something Went Wrong{"  "}
-          </Text>
-          <MaterialIcons
-            name="report-problem"
-            size={30}
-            color="#E74646"
-            style={styles.error_icon}
-          />
+        <View>
+          <View style={styles.error_title}>
+            <Text style={styles.error_title_text}>
+              Oh No! Something Went Wrong{"  "}
+            </Text>
+            <MaterialIcons
+              size={30}
+              color="#E74646"
+              name="report-problem"
+              style={styles.error_icon}
+            />
+          </View>
+
+          <Text style={styles.error_description}>{error_description}</Text>
         </View>
 
-        <Text style={styles.error_description}>{error_description}</Text>
-
-        <Image source={images.error} style={styles.error_image} />
+        <LottieView
+          loop
+          autoPlay
+          source={error}
+          style={styles.error_animation}
+        />
       </View>
 
       <View style={styles.navigation_container}>
