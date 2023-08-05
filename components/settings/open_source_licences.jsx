@@ -5,14 +5,18 @@ import { useEffect, useState } from "react";
 import { View, Text, Linking, Pressable } from "react-native";
 
 // App's External Imports
+import { useTheme } from "@react-navigation/native";
 import { ScrollView } from "react-native-gesture-handler";
 
 // App's Internal Imports
 import { Footer } from "../../components";
 const licenses = require("../../licenses.json");
-import styles from "../../assets/styles/open_source_licences";
+import get_computed_style from "../../assets/styles/open_source_licences";
 
 const OpenSourceLicences = () => {
+  const { colors } = useTheme();
+  const styles = get_computed_style(colors);
+
   const [package_information, set_package_information] = useState([]);
   const [package_name, set_package_name] = useState(Object.keys(licenses));
   const [package_details, set_package_details] = useState(

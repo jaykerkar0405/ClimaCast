@@ -5,7 +5,6 @@ import { View } from "react-native";
 import { forwardRef, useCallback, useImperativeHandle } from "react";
 
 // App's External Imports
-import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated, {
   withSpring,
   Extrapolate,
@@ -13,12 +12,17 @@ import Animated, {
   useSharedValue,
   useAnimatedStyle,
 } from "react-native-reanimated";
+import { useTheme } from "@react-navigation/native";
+import { Gesture, GestureDetector } from "react-native-gesture-handler";
 
 // App's Internal Imports
 import { screen_height } from "../../constants";
-import styles from "../../assets/styles/bottom_sheet";
+import get_computed_style from "../../assets/styles/bottom_sheet";
 
 const BottomSheet = forwardRef(({ children }, ref) => {
+  const { dark, colors } = useTheme();
+  const styles = get_computed_style(colors, dark);
+
   const active = useSharedValue(false);
   const translate_y = useSharedValue(0);
   const max_translate_y = -screen_height + 50;

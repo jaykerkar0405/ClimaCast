@@ -1,10 +1,16 @@
 // React Native Component Imports
 import { View, Text, TouchableOpacity } from "react-native";
 
+// App's External Imports
+import { useTheme } from "@react-navigation/native";
+
 // App's Internal Imports
-import styles from "../../assets/styles/tab_bar";
+import get_computed_style from "../../assets/styles/tab_bar";
 
 const TabBar = ({ active_tab, set_active_tab }) => {
+  const { colors } = useTheme();
+  const styles = get_computed_style(colors);
+
   return (
     <View style={styles.tab_bar}>
       <TouchableOpacity

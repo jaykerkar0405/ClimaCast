@@ -6,8 +6,9 @@ import LottieView from "lottie-react-native";
 import { MaterialIcons, Ionicons } from "react-native-vector-icons";
 
 // App's Internal Imports
-import styles from "../assets/styles/error";
+import { useTheme } from "@react-navigation/native";
 const error = require("../assets/images/error.json");
+import get_computed_style from "../assets/styles/error";
 
 const Error = ({
   route: {
@@ -19,20 +20,17 @@ const Error = ({
   },
   navigation,
 }) => {
+  const { colors } = useTheme();
+  const styles = get_computed_style(colors);
+
   return (
     <View style={styles.main_container}>
       <View style={styles.error_container}>
         <View>
           <View style={styles.error_title}>
             <Text style={styles.error_title_text}>
-              Oh No! Something Went Wrong{"  "}
+              Oh No! Something Went Wrong ⚠
             </Text>
-            <MaterialIcons
-              size={30}
-              color="#E74646"
-              name="report-problem"
-              style={styles.error_icon}
-            />
           </View>
 
           <Text style={styles.error_description}>{error_description}</Text>

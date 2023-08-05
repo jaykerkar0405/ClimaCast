@@ -15,10 +15,11 @@ import {
 } from "../modules";
 import { WalkThroughItem } from "../components";
 import { WalkThroughContext } from "../contexts";
-import styles from "../assets/styles/walk_through";
 import { walk_through_contents } from "../constants";
+import get_computed_style from "../assets/styles/walk_through";
 
-const WalkThrough = () => {
+const WalkThrough = ({ colors }) => {
+  const styles = get_computed_style(colors);
   const walk_through_ref = useRef(null); // Reference Variable Used To Perform Pagination
   const { change_walk_through_status } = useContext(WalkThroughContext); // Function For Changing WalkThrough Status
   const [current_slide_index, set_current_slide_index] = useState(0); // State Variable To Store The Value Of Current (Active) Slide's Index For Pagination
@@ -33,7 +34,9 @@ const WalkThrough = () => {
         keyExtractor={(item) => item.id}
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.walk_through_container}
-        renderItem={({ item }) => <WalkThroughItem item={item} />}
+        renderItem={({ item }) => (
+          <WalkThroughItem item={item} colors={colors} />
+        )}
         onMomentumScrollEnd={(element) => {
           change_current_slide_index(element, set_current_slide_index);
         }}

@@ -10,16 +10,16 @@ import { Network, WalkThrough } from "../../screens";
 // App's Internal Imports
 import { Navigation } from "../../components";
 
-const Screens = () => {
-  const { walk_through_status } = useContext(WalkThroughContext); // Fetching WalkThrough Status
+const Screens = ({ colors }) => {
   const { network_status } = useContext(NetworkContext); // Fetching Network Status
+  const { walk_through_status } = useContext(WalkThroughContext); // Fetching WalkThrough Status
 
   return (
     <>
       {!network_status ? (
-        <Network />
+        <Network colors={colors} />
       ) : walk_through_status === "true" ? (
-        <WalkThrough />
+        <WalkThrough colors={colors} />
       ) : (
         <Navigation />
       )}

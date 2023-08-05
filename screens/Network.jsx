@@ -9,13 +9,14 @@ import LottieView from "lottie-react-native";
 import { Feather, Ionicons } from "react-native-vector-icons";
 
 // App's Internal Imports
-import styles from "../assets/styles/network";
+import get_computed_style from "../assets/styles/network";
 const network_error = require("../assets/images/network_error.json");
 
 // App's Context Imports
 import { NetworkContext } from "../contexts";
 
-const Network = () => {
+const Network = ({ colors }) => {
+  const styles = get_computed_style(colors);
   const { fetch_network_status } = useContext(NetworkContext); // Function For Fetching Network Status
 
   return (

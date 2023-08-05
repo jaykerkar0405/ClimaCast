@@ -8,10 +8,11 @@ import {
   MaterialCommunityIcons,
 } from "react-native-vector-icons";
 import ViewShot from "react-native-view-shot";
+import { useTheme } from "@react-navigation/native";
 
 // App's Internal Imports
 import { render_weather_icon } from "../../modules";
-import styles from "../../assets/styles/weather/weather_components";
+import get_computed_style from "../../assets/styles/weather/weather_components";
 
 const WeatherComponents = ({
   snapshot_ref,
@@ -24,6 +25,9 @@ const WeatherComponents = ({
     weather_icon,
   },
 }) => {
+  const { colors } = useTheme();
+  const styles = get_computed_style(colors);
+
   return (
     <ViewShot
       style={[styles.weather, is_timeline_active && { marginTop: 0 }]}
@@ -46,7 +50,11 @@ const WeatherComponents = ({
 
       <View style={styles.lower_panel}>
         <View style={styles.weather_parameter}>
-          <Feather name="wind" color="#362FD9" size={23} />
+          <Feather
+            size={23}
+            name="wind"
+            style={styles.weather_parameter_icon}
+          />
           <Text style={styles.weather_parameter_title}>Wind</Text>
           <Text style={styles.weather_parameter_value}>
             {Math.round(wind_speed * 3.6)} km/hr
@@ -54,7 +62,11 @@ const WeatherComponents = ({
         </View>
 
         <View style={styles.weather_parameter}>
-          <Ionicons name="water" color="#362FD9" size={23} />
+          <Ionicons
+            size={23}
+            name="water"
+            style={styles.weather_parameter_icon}
+          />
           <Text style={styles.weather_parameter_title}>Humidity</Text>
           <Text style={styles.weather_parameter_value}>
             {Math.round(humidity)} %
@@ -62,7 +74,11 @@ const WeatherComponents = ({
         </View>
 
         <View style={styles.weather_parameter}>
-          <MaterialCommunityIcons name="gauge" color="#362FD9" size={23} />
+          <MaterialCommunityIcons
+            size={23}
+            name="gauge"
+            style={styles.weather_parameter_icon}
+          />
           <Text style={styles.weather_parameter_title}>Pressure</Text>
           <Text style={styles.weather_parameter_value}>
             {Math.round(pressure / 1013.25)} atm

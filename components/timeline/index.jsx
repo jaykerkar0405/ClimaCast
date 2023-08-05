@@ -1,12 +1,15 @@
 // React Native Component Imports
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
 
+// App's External Imports
+import { useTheme } from "@react-navigation/native";
+import { Ionicons } from "react-native-vector-icons";
+
 // App's Internal Imports
 import { render_timeline } from "../../modules";
 import { screen_height } from "../../constants";
-import styles from "../../assets/styles/timeline";
 import { HourlyForecast } from "../../components";
-import { Ionicons } from "react-native-vector-icons";
+import get_computed_style from "../../assets/styles/timeline";
 
 const Timeline = ({
   timeline_id,
@@ -16,6 +19,9 @@ const Timeline = ({
   is_timeline_active,
   set_is_timeline_active,
 }) => {
+  const { colors } = useTheme();
+  const styles = get_computed_style(colors);
+
   const timeline = [1, 2, 3, 4, 5];
 
   const TimelineItem = ({ item }) => {

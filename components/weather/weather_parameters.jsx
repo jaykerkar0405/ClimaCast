@@ -2,15 +2,19 @@
 import { View, Text } from "react-native";
 
 // App's External Imports
+import { useTheme } from "@react-navigation/native";
 import { Ionicons, Feather } from "react-native-vector-icons";
 
 // App's Internal Imports
 import { convert_unix_to_standard_time } from "../../modules";
-import styles from "../../assets/styles/weather/weather_parameters";
+import get_computed_style from "../../assets/styles/weather/weather_parameters";
 
 const WeatherParameters = ({
   weather_forecast: { sunset, sunrise, feels_like },
 }) => {
+  const { colors } = useTheme();
+  const styles = get_computed_style(colors);
+
   return (
     <View style={styles.weather_parameters}>
       <View style={styles.weather_parameter}>

@@ -5,15 +5,20 @@ import { useRef, useCallback, useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 
 // App's External Imports
+import { useTheme } from "@react-navigation/native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { MaterialCommunityIcons, Ionicons } from "react-native-vector-icons";
 
 // App's Internal Imports
-import styles from "../assets/styles/settings";
+import { screen_height } from "../constants";
+import get_computed_style from "../assets/styles/settings";
 import { Theme, Footer, BottomSheet } from "../components";
 
-const Settings = ({ navigation: { navigate } }) => {
+const Settings = ({ theme, navigation: { navigate } }) => {
+  const { colors } = useTheme();
   const bottom_sheet_ref = useRef(null);
+  const styles = get_computed_style(colors);
+
   const [children, set_children] = useState(null);
 
   const toggle_bottom_sheet = useCallback((type) => {
@@ -23,7 +28,7 @@ const Settings = ({ navigation: { navigate } }) => {
     if (is_active) {
       bottom_sheet_ref.current.scroll_to(0);
     } else {
-      bottom_sheet_ref.current.scroll_to(-450);
+      bottom_sheet_ref.current.scroll_to(-0.5575 * screen_height);
     }
   }, []);
 
@@ -40,7 +45,7 @@ const Settings = ({ navigation: { navigate } }) => {
           >
             <View style={styles.setting_information}>
               <MaterialCommunityIcons
-                color="#7149C6"
+                color={colors.tertiary_text_color}
                 name="brush-variant"
                 style={styles.setting_icon}
               />

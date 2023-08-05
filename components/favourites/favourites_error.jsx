@@ -3,12 +3,16 @@ import { Text } from "react-native";
 
 // App's External Imports
 import LottieView from "lottie-react-native";
+import { useTheme } from "@react-navigation/native";
 
 // App's Internal Imports
-import styles from "../../assets/styles/favourites/favourites_error";
+import get_computed_style from "../../assets/styles/favourites/favourites_error";
 const favourite_error = require("../../assets/images/favourite_error.json");
 
 const FavouritesError = () => {
+  const { colors } = useTheme();
+  const styles = get_computed_style(colors);
+
   return (
     <>
       <LottieView

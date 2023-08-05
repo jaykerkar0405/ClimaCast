@@ -11,6 +11,7 @@ import {
 } from "react-native";
 
 // App's External Imports
+import { useTheme } from "@react-navigation/native";
 import { Ionicons } from "react-native-vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -27,10 +28,12 @@ import {
   FavouritesError as SearchError,
 } from "../components";
 import { screen_height } from "../constants";
-import styles from "../assets/styles/search_bar";
+import get_computed_style from "../assets/styles/search_bar";
 
 const SearchBar = ({ navigation: { goBack, navigate } }) => {
+  const { dark, colors } = useTheme();
   const [city, set_city] = useState("");
+  const styles = get_computed_style(colors, dark);
   const [auto_suggestion, set_auto_suggestion] = useState([]);
   const [authentication_token, set_authentication_token] = useState(null);
 
@@ -112,6 +115,7 @@ const SearchBar = ({ navigation: { goBack, navigate } }) => {
           onChangeText={set_city}
           placeholder="Search ..."
           style={styles.search_bar}
+          placeholderTextColor={colors.placeholder_text_color}
         />
 
         <TouchableOpacity
@@ -144,7 +148,7 @@ const SearchBar = ({ navigation: { goBack, navigate } }) => {
 
       <ScrollView style={styles.auto_suggest_container}>
         {city.length > 0 ? (
-          auto_suggestion.length > 0 ? (
+          auto_suggestion.length > 0 && auto_suggestion[0].placeName ? (
             auto_suggestion.map((element, index) => {
               if (auto_suggestion.length - 1 !== index) {
                 return (

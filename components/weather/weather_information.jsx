@@ -1,12 +1,13 @@
 // React Native Component Imports
-import { View, Text, Image } from "react-native";
+import { View, Text } from "react-native";
 
 // App's External Imports
+import { useTheme } from "@react-navigation/native";
 import { MaterialIcons } from "react-native-vector-icons";
 
 // App's Internal Imports
 import { bearing_to_direction } from "../../modules";
-import styles from "../../assets/styles/weather/weather_information";
+import get_computed_style from "../../assets/styles/weather/weather_information";
 
 const WeatherInformation = ({
   weather_forecast: {
@@ -22,6 +23,9 @@ const WeatherInformation = ({
     weather_condition,
   },
 }) => {
+  const { colors } = useTheme();
+  const styles = get_computed_style(colors);
+
   return (
     <View style={styles.weather_information}>
       <View style={styles.theoretical_information_container}>
@@ -104,6 +108,7 @@ const WeatherInformation = ({
           <Text style={styles.wind_direction_title}>Wind Direction</Text>
           <MaterialIcons
             size={50}
+            color={colors.wind_direction_icon_color}
             name={bearing_to_direction(wind_direction).direction_icon}
           />
           <Text style={styles.wind_direction_value}>

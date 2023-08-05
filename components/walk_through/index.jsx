@@ -5,9 +5,11 @@ import { View, Text, Image } from "react-native";
 import { Ionicons } from "react-native-vector-icons";
 
 // App's Internal Imports
-import styles from "../../assets/styles/walk_through/walk_through_item";
+import get_computed_style from "../../assets/styles/walk_through/walk_through_item";
 
-const WalkThroughItem = ({ item }) => {
+const WalkThroughItem = ({ item, colors }) => {
+  const styles = get_computed_style(colors);
+
   return (
     <View style={styles.container}>
       <Image source={item.image} style={styles.walk_through_image} />

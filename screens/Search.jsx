@@ -2,13 +2,17 @@
 import { View, Text, TextInput, Pressable } from "react-native";
 
 // App's External Imports
+import { useTheme } from "@react-navigation/native";
 import { Ionicons } from "react-native-vector-icons";
 
 // App's Internal Imports
 import { Favourites } from "../components";
-import styles from "../assets/styles/search";
+import get_computed_style from "../assets/styles/search";
 
 const Search = ({ navigation }) => {
+  const { dark, colors } = useTheme();
+  const styles = get_computed_style(colors, dark);
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -20,7 +24,7 @@ const Search = ({ navigation }) => {
 
       <Pressable
         style={styles.search}
-        onPress={() => {
+        onPress={async () => {
           navigation.navigate("SearchBar");
         }}
       >
@@ -28,6 +32,7 @@ const Search = ({ navigation }) => {
           editable={false}
           placeholder="Search ..."
           style={styles.search_bar}
+          placeholderTextColor={colors.placeholder_text_color}
           onPressIn={() => {
             navigation.navigate("SearchBar");
           }}

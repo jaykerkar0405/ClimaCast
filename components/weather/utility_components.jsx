@@ -6,15 +6,18 @@ import { useContext } from "react";
 
 // App's External Imports
 import * as Sharing from "expo-sharing";
+import { useTheme } from "@react-navigation/native";
 import { Ionicons, Feather } from "react-native-vector-icons";
 
 // App's Internal Imports
-import styles from "../../assets/styles/weather/utility_components";
+import get_computed_style from "../../assets/styles/weather/utility_components";
 
 // App's Context Imports
 import { WeatherContext } from "../../contexts";
 
 const UtilityComponents = ({ snapshot_ref, weather_forecast_location }) => {
+  const { colors } = useTheme();
+  const styles = get_computed_style(colors);
   const { weather_location, add_weather_location, remove_weather_location } =
     useContext(WeatherContext);
 

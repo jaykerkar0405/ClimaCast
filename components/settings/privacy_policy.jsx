@@ -2,13 +2,17 @@
 import { View, Text, Linking, Pressable } from "react-native";
 
 // App's External Imports
+import { useTheme } from "@react-navigation/native";
 import { ScrollView } from "react-native-gesture-handler";
 
 // App's Internal Imports
 import { Footer } from "../../components";
-import styles from "../../assets/styles/privacy_policy";
+import get_computed_style from "../../assets/styles/privacy_policy";
 
 const PrivacyPolicy = () => {
+  const { colors } = useTheme();
+  const styles = get_computed_style(colors);
+
   return (
     <ScrollView
       style={styles.container}

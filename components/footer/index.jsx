@@ -3,11 +3,15 @@ import { View, Text, Linking, Pressable } from "react-native";
 
 // App's External Imports
 import * as Application from "expo-application";
+import { useTheme } from "@react-navigation/native";
 
 // App's Internal Imports
-import styles from "../../assets/styles/footer";
+import get_computed_style from "../../assets/styles/footer";
 
 const Footer = () => {
+  const { colors } = useTheme();
+  const styles = get_computed_style(colors);
+
   return (
     <>
       <View style={styles.promotional_information_container}>
@@ -35,8 +39,7 @@ const Footer = () => {
           {Application.nativeApplicationVersion}
         </Text>
         <Text style={styles.application_information_title}>
-          {"  "}
-          |  Build Version:
+          {"  "}| Build Version:
         </Text>
         <Text style={styles.application_information_value}>
           {" "}

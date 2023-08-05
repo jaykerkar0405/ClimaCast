@@ -9,16 +9,19 @@ import {
   ScrollView,
   GestureHandlerRootView,
 } from "react-native-gesture-handler";
+import { useTheme } from "@react-navigation/native";
 import { Ionicons } from "react-native-vector-icons";
 
 // App's Internal Imports
 import { screen_height } from "../../constants";
 import { WeatherContext } from "../../contexts";
-import styles from "../../assets/styles/favourites";
+import get_computed_style from "../../assets/styles/favourites";
 import { FavouriteItem, FavouritesError } from "../../components";
 
 const Favourites = ({ navigation: { navigate } }) => {
+  const { colors } = useTheme();
   const scroll_ref = useRef(null);
+  const styles = get_computed_style(colors);
   const { weather_location, remove_weather_location } =
     useContext(WeatherContext);
 

@@ -12,6 +12,7 @@ import Animated, {
   useAnimatedStyle,
   useAnimatedGestureHandler,
 } from "react-native-reanimated";
+import { useTheme } from "@react-navigation/native";
 import { Ionicons } from "react-native-vector-icons";
 import { PanGestureHandler } from "react-native-gesture-handler";
 
@@ -23,7 +24,7 @@ import {
 } from "../../modules";
 import { screen_width } from "../../constants";
 import { FavouritesLoader } from "../../components";
-import styles from "../../assets/styles/favourites/favourite_item";
+import get_computed_style from "../../assets/styles/favourites/favourite_item";
 
 const FavouriteItem = ({
   on_dismiss,
@@ -31,6 +32,9 @@ const FavouriteItem = ({
   simultaneous_handlers,
   saved_weather_location,
 }) => {
+  const { dark, colors } = useTheme();
+  const styles = get_computed_style(colors, dark);
+
   const [weather_forecast, set_weather_forecast] = useState(null);
 
   const fetch_weather_forecast = async () => {

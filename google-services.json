@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "210876810354",
+    "project_id": "climacast-134e4",
+    "storage_bucket": "climacast-134e4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210876810354:android:11949ce882dd0ff02a6eeb",
+        "android_client_info": {
+          "package_name": "com.bytewise.climacast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "210876810354-d2l0v6vjq752r8onjktjse4sq721230s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bytewise.climacast",
+            "certificate_hash": "fb3c827ce6410a865b1164a0e42fcb0fc209858f"
+          }
+        },
+        {
+          "client_id": "210876810354-dp6t55s76p32k5v3j049sckc8igltdev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXP3jrU_MxjQ_hbd9vIHVjFkpnYZu8ZQ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "210876810354-dp6t55s76p32k5v3j049sckc8igltdev.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,13 +1,18 @@
 // React Native Component Imports
 import { Text, View } from "react-native";
 
+// App's External Imports
+import { useTheme } from "@react-navigation/native";
+
 // App's Internal Imports
-import styles from "../../assets/styles/air_quality/air_pollutant_concentration";
+import get_computed_style from "../../assets/styles/air_quality/air_pollutant_concentration";
 
 // React Hook Imports
 import { useEffect, useState } from "react";
 
 const AirPollutantConcentration = ({ air_pollutant_components }) => {
+  const { colors } = useTheme();
+  const styles = get_computed_style(colors);
   const [air_pollutant_concentration, set_air_pollutant_concentration] =
     useState(null);
 

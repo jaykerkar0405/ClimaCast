@@ -2,16 +2,19 @@
 import { useContext } from "react";
 
 // React Native Component Imports
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, useColorScheme } from "react-native";
 
 // App's External Imports
+import { useTheme } from "@react-navigation/native";
 import { Ionicons } from "react-native-vector-icons";
 
 // App's Internal Imports
 import { ThemeContext } from "../../contexts";
-import styles from "../../assets/styles/theme";
+import get_computed_style from "../../assets/styles/theme";
 
 const Theme = () => {
+  const { colors } = useTheme();
+  const styles = get_computed_style(colors);
   const { theme, change_theme } = useContext(ThemeContext);
 
   return (
@@ -26,8 +29,8 @@ const Theme = () => {
           <View style={styles.theme_information}>
             <Ionicons
               name="contrast"
-              style={styles.theme_icon}
               color="#179881"
+              style={styles.theme_icon}
             />
             <Text style={styles.theme_name}>Follow System</Text>
           </View>

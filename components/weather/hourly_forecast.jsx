@@ -4,15 +4,20 @@ import { FlatList, View, Text, Image } from "react-native";
 // React Hook Imports
 import { useEffect, useState } from "react";
 
+// App's External Imports
+import { useTheme } from "@react-navigation/native";
+
 // App's Internal Imports
 import {
   compare_timezone,
   render_weather_icon,
   convert_unix_to_offset_time,
 } from "../../modules";
-import styles from "../../assets/styles/weather/hourly_forecast";
+import get_computed_style from "../../assets/styles/weather/hourly_forecast";
 
 const HourlyForecast = ({ future_forecast, offset }) => {
+  const { colors } = useTheme();
+  const styles = get_computed_style(colors);
   const [hourly_forecast, set_hourly_forecast] = useState(null);
 
   const filter_future_forecast = () => {

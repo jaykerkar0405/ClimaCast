@@ -2,16 +2,20 @@
 import { Text, View } from "react-native";
 
 // App's External Imports
+import { useTheme } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Foundation, FontAwesome, Ionicons } from "react-native-vector-icons";
 
 // App's Internal Imports
-import styles from "../../assets/styles/navbar";
 import { Home, Search, Settings } from "../../screens";
+import get_computed_style from "../../assets/styles/navbar";
 
 const Tab = createBottomTabNavigator();
 
 const Navbar = () => {
+  const { dark, colors } = useTheme();
+  const styles = get_computed_style(colors, dark);
+
   return (
     <Tab.Navigator
       screenOptions={{

@@ -52,5 +52,15 @@ A modern weather application built with React Native and Expo that provides real
 • Major search bug fix: Fixed incorrect search suggestions 🔍\
 • Updated libraries: Enhanced security and compatibility 🔄
 
+**Version** 1.2.0\
+• Dark Theme: Sleek and stylish for low-light conditions🌒\
+• Light Theme: Refreshing and vibrant for daytime use 🌞\
+• Search Screen Crash: Fixed the app crashing issue during searches 🛠️\
+• Performance: Optimized for smoother navigation and faster loading ⚙️\
+• UI Refinements: Polished and consistent interface for better user experience 🎨\
+• Accessibility: Enhanced inclusivity and usability for all users ♿\
+• Privacy and Security: Additional measures to protect your data 🛡️\
+• Bug Fixes and Stability: Improved app stability and reliability 🐞
+
 🌤️ Happy Weather Forecasting! 🌈\
 • **The Climacast Team**

@@ -9,9 +9,8 @@ const fetch_weather_location_by_geolocation = async (latitude, longitude) => {
   const api = `https://apis.mappls.com/advancedmaps/v1/${MAPPLS_API_KEY}/rev_geocode?lat=${latitude}&lng=${longitude}&region=IND&lang=en`;
   const fetched_weather_location = await fetch(api);
 
-  const weather_location = validate_weather_location(
-    (await fetched_weather_location.json()).results[0].city
-  );
+  const weather_location = (await fetched_weather_location.json()).results[0]
+    .city;
 
   return weather_location;
 };
