@@ -34,7 +34,6 @@ const Navbar = () => {
             return (
               <View style={styles.tab}>
                 <Foundation
-                  size={26}
                   name="home"
                   style={focused ? styles.focused_icon : styles.unfocused_icon}
                 />
@@ -59,7 +58,6 @@ const Navbar = () => {
             return (
               <View style={styles.tab}>
                 <FontAwesome
-                  size={26}
                   name="search"
                   style={focused ? styles.focused_icon : styles.unfocused_icon}
                 />
@@ -86,7 +84,6 @@ const Navbar = () => {
             return (
               <View style={styles.tab}>
                 <Ionicons
-                  size={26}
                   name="settings"
                   style={focused ? styles.focused_icon : styles.unfocused_icon}
                 />

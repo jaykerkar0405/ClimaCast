@@ -4,6 +4,9 @@ import { ScrollView, RefreshControl } from "react-native";
 // React Hook Imports
 import { useState, useEffect, useContext } from "react";
 
+// App's External Imports
+import analytics from "@react-native-firebase/analytics";
+
 // App's Internal Imports
 import {
   Header,
@@ -137,6 +140,12 @@ const Main = ({ type, identifier, navigation }) => {
           "home"
         );
       }
+    }
+
+    if (weather_location) {
+      await analytics().logSearch({
+        search_term: weather_location,
+      });
     }
   };
 

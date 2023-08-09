@@ -6,7 +6,7 @@ import { useTheme } from "@react-navigation/native";
 import { Ionicons } from "react-native-vector-icons";
 
 // App's Internal Imports
-import { Favourites } from "../components";
+import { Favourites, Toast } from "../components";
 import get_computed_style from "../assets/styles/search";
 
 const Search = ({ navigation }) => {
@@ -24,7 +24,7 @@ const Search = ({ navigation }) => {
 
       <Pressable
         style={styles.search}
-        onPress={async () => {
+        onPress={() => {
           navigation.navigate("SearchBar");
         }}
       >

@@ -1,5 +1,5 @@
 // React Hook Imports
-import { useCallback, useContext } from "react";
+import { useCallback, useContext, useEffect } from "react";
 
 // React Native Component Imports
 import { SafeAreaView, useColorScheme } from "react-native";
@@ -11,8 +11,14 @@ import {
   Poppins_400Regular,
   Poppins_600SemiBold,
 } from "@expo-google-fonts/poppins";
+import * as Sentry from "sentry-expo";
 import { StatusBar } from "expo-status-bar";
 import * as SplashScreen from "expo-splash-screen";
+import analytics from "@react-native-firebase/analytics";
+import { captureException } from "@sentry/react-native";
+
+// App's Environment Variable Imports
+import { SENTRY_DSN, SENTRY_DEBUG } from "@env";
 
 // App's Internal Imports
 import {
@@ -33,6 +39,12 @@ import {
 } from "./contexts";
 
 SplashScreen.preventAutoHideAsync();
+
+Sentry.init({
+  dsn: SENTRY_DSN,
+  debug: SENTRY_DEBUG,
+  enableInExpoDevelopment: true,
+});
 
 const Children = () => {
   const { theme } = useContext(ThemeContext);
@@ -91,17 +103,25 @@ const Children = () => {
 };
 
 const App = () => {
-  return (
-    <WalkThroughState>
-      <WeatherState>
-        <NetworkState>
-          <ThemeState>
-            <Children />
-          </ThemeState>
-        </NetworkState>
-      </WeatherState>
-    </WalkThroughState>
-  );
+  try {
+    useEffect(async () => {
+      await analytics().logAppOpen();
+    }, []);
+
+    return (
+      <WalkThroughState>
+        <WeatherState>
+          <NetworkState>
+            <ThemeState>
+              <Children />
+            </ThemeState>
+          </NetworkState>
+        </WeatherState>
+      </WalkThroughState>
+    );
+  } catch (error) {
+    captureException(error);
+  }
 };
 
 export default App;

@@ -2,7 +2,7 @@
   "expo": {
     "name": "ClimaCast",
     "slug": "climacast",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
     "icon": "./assets/images/app/icon.png",
@@ -21,7 +21,7 @@
       "bundleIdentifier": "com.bytewise.climacast"
     },
     "android": {
-      "versionCode": 5,
+      "versionCode": 6,
       "userInterfaceStyle": "automatic",
       "package": "com.bytewise.climacast",
       "googleServicesFile": "./google-services.json",
@@ -30,10 +30,22 @@
         "foregroundImage": "./assets/images/app/adaptive-icon.png"
       }
     },
+    "plugins": ["sentry-expo", "@react-native-firebase/app"],
     "extra": {
       "eas": {
         "projectId": "f212fbbb-e6c0-4ae2-8ad9-33577f169857"
       }
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "project": "climacast",
+            "organization": "bytewise"
+          }
+        }
+      ]
     }
   }
 }

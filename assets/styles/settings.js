@@ -7,7 +7,7 @@ import { screen_width, screen_height } from "../../constants";
 const get_computed_style = (colors) => {
   return StyleSheet.create({
     container: {
-      paddingHorizontal: 20,
+      paddingHorizontal: 18,
     },
     setting_section: {
       marginBottom: 10,

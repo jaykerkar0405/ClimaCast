@@ -7,6 +7,7 @@ import { useContext } from "react";
 // App's External Imports
 import * as Sharing from "expo-sharing";
 import { useTheme } from "@react-navigation/native";
+import analytics from "@react-native-firebase/analytics";
 import { Ionicons, Feather } from "react-native-vector-icons";
 
 // App's Internal Imports
@@ -26,9 +27,14 @@ const UtilityComponents = ({ snapshot_ref, weather_forecast_location }) => {
       <TouchableOpacity
         style={styles.utility}
         onPress={() => {
-          snapshot_ref.current.capture().then((uri) => {
+          snapshot_ref.current.capture().then(async (uri) => {
             Sharing.shareAsync(uri, {
               dialogTitle: "ClimaCast: Weather Forecast",
+            });
+
+            await analytics().logEvent("share", {
+              content_value: uri,
+              content_type: "uri",
             });
           });
         }}
@@ -42,8 +48,13 @@ const UtilityComponents = ({ snapshot_ref, weather_forecast_location }) => {
       {weather_location.includes(weather_forecast_location) ? (
         <TouchableOpacity
           style={styles.utility}
-          onPress={() => {
+          onPress={async () => {
             remove_weather_location(weather_forecast_location);
+
+            await analytics().logEvent("manage_weather_location", {
+              value: weather_forecast_location,
+              method: "remove_weather_location",
+            });
           }}
         >
           <View style={styles.utility_content}>
@@ -54,8 +65,13 @@ const UtilityComponents = ({ snapshot_ref, weather_forecast_location }) => {
       ) : (
         <TouchableOpacity
           style={styles.utility}
-          onPress={() => {
+          onPress={async () => {
             add_weather_location(weather_forecast_location);
+
+            await analytics().logEvent("manage_weather_location", {
+              method: "add_weather_location",
+              value: weather_forecast_location,
+            });
           }}
         >
           <View style={styles.utility_content}>

@@ -30,8 +30,9 @@ const get_computed_style = (colors, dark) => {
       justifyContent: "center",
     },
     focused_icon: {
+      fontSize: 24,
       borderRadius: 20,
-      paddingVertical: 5,
+      paddingVertical: 6,
       textAlign: "center",
       position: "absolute",
       top: 0.018 * screen_height,
@@ -41,8 +42,9 @@ const get_computed_style = (colors, dark) => {
       backgroundColor: colors.primary_background_color,
     },
     unfocused_icon: {
+      fontSize: 24,
       position: "absolute",
-      top: 0.024 * screen_height,
+      top: 0.025 * screen_height,
       color: colors.bottom_tab_tint_color,
     },
     focused_title: {

@@ -22,7 +22,7 @@ const TermsAndConditions = () => {
       <View style={styles.terms}>
         <Text style={styles.terms_title}>Terms & Conditions</Text>
         <Text style={styles.terms_content}>
-          Last updated: April 30, 2023{"\n"}Please read these terms and
+          Last updated: August 15, 2023{"\n"}Please read these terms and
           conditions carefully before using Our Service.
         </Text>
       </View>

@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 
 // App's External Imports
 import { useTheme } from "@react-navigation/native";
+import analytics from "@react-native-firebase/analytics";
 
 // App's Internal Imports
 import get_computed_style from "../../assets/styles/tab_bar";
@@ -18,8 +19,12 @@ const TabBar = ({ active_tab, set_active_tab }) => {
           styles.tab,
           active_tab === "weather" ? styles.focused_tab : styles.unfocused_tab,
         ]}
-        onPress={() => {
+        onPress={async () => {
           set_active_tab("weather");
+
+          await analytics().logEvent("active_tab", {
+            tab: "weather",
+          });
         }}
       >
         <Text style={styles.tab_title}>Weather</Text>
@@ -32,8 +37,12 @@ const TabBar = ({ active_tab, set_active_tab }) => {
             ? styles.focused_tab
             : styles.unfocused_tab,
         ]}
-        onPress={() => {
+        onPress={async () => {
           set_active_tab("air_quality");
+
+          await analytics().logEvent("active_tab", {
+            tab: "weather",
+          });
         }}
       >
         <Text style={styles.tab_title}>Air Quality</Text>

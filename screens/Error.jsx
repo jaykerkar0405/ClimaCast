@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 
 // App's External Imports
 import LottieView from "lottie-react-native";
-import { MaterialIcons, Ionicons } from "react-native-vector-icons";
+import { Ionicons } from "react-native-vector-icons";
 
 // App's Internal Imports
 import { useTheme } from "@react-navigation/native";

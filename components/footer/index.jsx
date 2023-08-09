@@ -4,6 +4,7 @@ import { View, Text, Linking, Pressable } from "react-native";
 // App's External Imports
 import * as Application from "expo-application";
 import { useTheme } from "@react-navigation/native";
+import analytics from "@react-native-firebase/analytics";
 
 // App's Internal Imports
 import get_computed_style from "../../assets/styles/footer";
@@ -18,6 +19,10 @@ const Footer = () => {
         <Text style={styles.promotional_information_title}>Powered By </Text>
         <Pressable
           onPress={async () => {
+            await analytics().logEvent("promotional_information_value", {
+              value: "ByteWise",
+            });
+
             await Linking.openURL("https://www.bytewise.ml");
           }}
         >

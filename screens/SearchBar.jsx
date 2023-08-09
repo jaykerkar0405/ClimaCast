@@ -119,7 +119,7 @@ const SearchBar = ({ navigation: { goBack, navigate } }) => {
         />
 
         <TouchableOpacity
-          onPress={() => {
+          onPress={async () => {
             if (city) {
               navigate("SearchResult", {
                 city: city,
@@ -155,7 +155,7 @@ const SearchBar = ({ navigation: { goBack, navigate } }) => {
                   <TouchableOpacity
                     key={index}
                     style={styles.auto_suggest_item}
-                    onPress={() => {
+                    onPress={async () => {
                       navigate("SearchResult", {
                         city: element.placeName,
                       });
@@ -186,7 +186,7 @@ const SearchBar = ({ navigation: { goBack, navigate } }) => {
                       styles.auto_suggest_item,
                       { marginBottom: 0.025 * screen_height },
                     ]}
-                    onPress={() => {
+                    onPress={async () => {
                       navigate("SearchResult", {
                         city: element.placeName,
                       });

@@ -1,11 +1,12 @@
 // React Hook Imports
-import { useContext } from "react";
+import { useRef, useContext } from "react";
 
 // App's Context Imports
 import { ThemeContext } from "../../contexts";
 
 // App's External Imports
 import { useColorScheme } from "react-native";
+import analytics from "@react-native-firebase/analytics";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
@@ -22,6 +23,8 @@ import { Error, SearchBar, SearchResult } from "../../screens";
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
+  const route_name_ref = useRef(null);
+  const navigation_ref = useRef(null);
   const { theme } = useContext(ThemeContext);
   const fetched_color_scheme = useColorScheme();
 
@@ -54,7 +57,24 @@ const Navigation = () => {
 
   return (
     <NavigationContainer
+      ref={navigation_ref}
       theme={get_computed_theme(theme) === "dark" ? dark_theme : light_theme}
+      onReady={() => {
+        route_name_ref.current = navigation_ref.current.getCurrentRoute().name;
+      }}
+      onStateChange={async () => {
+        const previous_route_name = route_name_ref.current;
+        const current_route_name =
+          navigation_ref.current.getCurrentRoute().name;
+
+        if (previous_route_name !== current_route_name) {
+          await analytics().logScreenView({
+            screen_name: current_route_name,
+            screen_class: current_route_name,
+          });
+        }
+        route_name_ref.current = current_route_name;
+      }}
     >
       <Stack.Navigator>
         <Stack.Screen

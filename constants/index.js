@@ -1,14 +1,13 @@
 // App's Internal Imports
 import { days, months } from "./utils";
+import { dark_theme, light_theme } from "./theme";
 import air_quality_parameters from "./air_quality";
 import walk_through_contents from "./walk_through";
 import weather_precaution_messages from "./weather";
 import { screen_height, screen_width } from "./layout";
-import { theme, dark_theme, light_theme } from "./theme";
 
 export {
   days,
-  theme,
   months,
   dark_theme,
   light_theme,

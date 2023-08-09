@@ -6,6 +6,7 @@ import { useContext, useRef, useState } from "react";
 
 // App's External Imports
 import { Ionicons } from "react-native-vector-icons";
+import analytics from "@react-native-firebase/analytics";
 
 // App's Internal Imports
 import {
@@ -63,12 +64,14 @@ const WalkThrough = ({ colors }) => {
           <View>
             <TouchableOpacity
               style={styles.navigation_button}
-              onPress={() => {
+              onPress={async () => {
                 next_slide(
                   walk_through_ref,
                   current_slide_index,
                   set_current_slide_index
                 );
+
+                await analytics().logTutorialBegin();
               }}
             >
               <Text style={styles.navigation_button_text}>
@@ -133,8 +136,10 @@ const WalkThrough = ({ colors }) => {
           <View>
             <TouchableOpacity
               style={styles.navigation_button}
-              onPress={() => {
+              onPress={async () => {
                 change_walk_through_status("false");
+
+                await analytics().logTutorialComplete();
               }}
             >
               <Text style={styles.navigation_button_text}>

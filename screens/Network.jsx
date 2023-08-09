@@ -2,10 +2,11 @@
 import { View, Text, TouchableOpacity } from "react-native";
 
 // React Hook Imports
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 // App's External Imports
 import LottieView from "lottie-react-native";
+import analytics from "@react-native-firebase/analytics";
 import { Feather, Ionicons } from "react-native-vector-icons";
 
 // App's Internal Imports
@@ -18,6 +19,13 @@ import { NetworkContext } from "../contexts";
 const Network = ({ colors }) => {
   const styles = get_computed_style(colors);
   const { fetch_network_status } = useContext(NetworkContext); // Function For Fetching Network Status
+
+  useEffect(async () => {
+    await analytics().logScreenView({
+      screen_name: "Network",
+      screen_class: "Network",
+    });
+  }, []);
 
   return (
     <View style={styles.main_container}>

@@ -22,7 +22,7 @@ const PrivacyPolicy = () => {
       <View style={styles.policy}>
         <Text style={styles.policy_title}>Privacy Policy</Text>
         <Text style={styles.policy_content}>
-          Last updated: April 30, 2023.{"\n"}This Privacy Policy describes Our
+          Last updated: August 15, 2023.{"\n"}This Privacy Policy describes Our
           policies and procedures on the collection, use and disclosure of Your
           information when You use the Service and tells You about Your privacy
           rights and how the law protects You. We use Your Personal data to
@@ -283,6 +283,16 @@ const PrivacyPolicy = () => {
       </View>
 
       <View style={styles.policy}>
+        <Text style={styles.policy_title}>Map Data</Text>
+        <Text style={styles.policy_content}>
+          Mappls collects search queries and device information to provide
+          relevant search suggestions in your app. We use this data to improve
+          the service, analyze trends, and share with trusted partners. Your
+          information is securely stored and retained as needed
+        </Text>
+      </View>
+
+      <View style={styles.policy}>
         <Text style={styles.policy_title}>Animated Images</Text>
         <Text style={styles.policy_content}>
           To enhance the visual experience within our App, we utilize animated
@@ -290,6 +300,17 @@ const PrivacyPolicy = () => {
           sections of the App, such as backgrounds, icons, and visual effects.
           By using our App, you agree to the use of these animated images as
           described in this policy.
+        </Text>
+      </View>
+
+      <View style={styles.policy}>
+        <Text style={styles.policy_title}>Animations</Text>
+        <Text style={styles.policy_content}>
+          When integrating Lottie Files for animations in your app, we
+          prioritize your privacy. We collect necessary user data and animation
+          files solely to enhance our services securely. Rest assured that your
+          information is handled with care and never shared for inappropriate
+          purposes.
         </Text>
       </View>
 

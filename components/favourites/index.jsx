@@ -11,6 +11,7 @@ import {
 } from "react-native-gesture-handler";
 import { useTheme } from "@react-navigation/native";
 import { Ionicons } from "react-native-vector-icons";
+import analytics from "@react-native-firebase/analytics";
 
 // App's Internal Imports
 import { screen_height } from "../../constants";
@@ -25,8 +26,13 @@ const Favourites = ({ navigation: { navigate } }) => {
   const { weather_location, remove_weather_location } =
     useContext(WeatherContext);
 
-  const on_dismiss = (location) => {
+  const on_dismiss = async (location) => {
     remove_weather_location(location);
+
+    await analytics().logEvent("manage_weather_location", {
+      value: location,
+      method: "remove_weather_location",
+    });
   };
 
   return (
@@ -50,7 +56,7 @@ const Favourites = ({ navigation: { navigate } }) => {
               return (
                 <Pressable
                   key={index}
-                  onPress={() => {
+                  onPress={async () => {
                     navigate("SearchResult", {
                       city: element,
                     });

@@ -2,11 +2,12 @@
 import { useContext } from "react";
 
 // React Native Component Imports
-import { View, Text, TouchableOpacity, useColorScheme } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 
 // App's External Imports
 import { useTheme } from "@react-navigation/native";
 import { Ionicons } from "react-native-vector-icons";
+import analytics from "@react-native-firebase/analytics";
 
 // App's Internal Imports
 import { ThemeContext } from "../../contexts";
@@ -22,8 +23,12 @@ const Theme = () => {
       <View style={styles.theme_tabs}>
         <TouchableOpacity
           style={styles.theme}
-          onPress={() => {
+          onPress={async () => {
             change_theme("system");
+
+            await analytics().logEvent("change_theme", {
+              theme: "system",
+            });
           }}
         >
           <View style={styles.theme_information}>
@@ -43,8 +48,12 @@ const Theme = () => {
 
         <TouchableOpacity
           style={styles.theme}
-          onPress={() => {
+          onPress={async () => {
             change_theme("light");
+
+            await analytics().logEvent("change_theme", {
+              theme: "light",
+            });
           }}
         >
           <View style={styles.theme_information}>
@@ -60,8 +69,12 @@ const Theme = () => {
 
         <TouchableOpacity
           style={[styles.theme, { borderBottomWidth: 0 }]}
-          onPress={() => {
+          onPress={async () => {
             change_theme("dark");
+
+            await analytics().logEvent("change_theme", {
+              theme: "dark",
+            });
           }}
         >
           <View style={styles.theme_information}>

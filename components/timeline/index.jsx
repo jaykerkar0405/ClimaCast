@@ -4,6 +4,7 @@ import { FlatList, Text, TouchableOpacity, View } from "react-native";
 // App's External Imports
 import { useTheme } from "@react-navigation/native";
 import { Ionicons } from "react-native-vector-icons";
+import analytics from "@react-native-firebase/analytics";
 
 // App's Internal Imports
 import { render_timeline } from "../../modules";
@@ -55,11 +56,19 @@ const Timeline = ({
 
         <TouchableOpacity
           style={styles.timeline_drawer}
-          onPress={() => {
+          onPress={async () => {
             if (is_timeline_active) {
               set_is_timeline_active(false);
+
+              await analytics().logEvent("is_timeline_active", {
+                status: false,
+              });
             } else {
               set_is_timeline_active(true);
+
+              await analytics().logEvent("is_timeline_active", {
+                status: true,
+              });
             }
           }}
         >

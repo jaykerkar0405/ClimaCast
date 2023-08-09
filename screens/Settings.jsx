@@ -6,6 +6,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 
 // App's External Imports
 import { useTheme } from "@react-navigation/native";
+import analytics from "@react-native-firebase/analytics";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { MaterialCommunityIcons, Ionicons } from "react-native-vector-icons";
 
@@ -38,8 +39,13 @@ const Settings = ({ theme, navigation: { navigate } }) => {
         <View style={styles.setting_section}>
           <Text style={styles.setting_title}>General</Text>
           <TouchableOpacity
-            onPress={() => {
+            onPress={async () => {
               toggle_bottom_sheet("theme");
+
+              await analytics().logScreenView({
+                screen_name: "Theme",
+                screen_class: "Theme",
+              });
             }}
             style={styles.setting}
           >
