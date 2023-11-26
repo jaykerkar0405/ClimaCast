@@ -13,6 +13,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 // App's Internal Imports
 import {
   Navbar,
+  ReleaseNotes,
   PrivacyPolicy,
   TermsAndConditions,
   OpenSourceLicences,
@@ -93,6 +94,15 @@ const Navigation = () => {
           name="SearchBar"
           component={SearchBar}
           options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="ReleaseNotes"
+          component={ReleaseNotes}
+          options={stack_screen_options(
+            "Release Notes",
+            get_computed_theme(theme) === "dark" ? dark_theme : light_theme
+          )}
         />
 
         <Stack.Screen

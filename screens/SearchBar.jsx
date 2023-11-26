@@ -216,7 +216,7 @@ const SearchBar = ({ navigation: { goBack, navigate } }) => {
           )
         ) : (
           <View style={styles.search_error}>
-            <SearchError />
+            <SearchError error_message="Tap into weather wonders. Type your location now!" />
           </View>
         )}
 

@@ -6,10 +6,10 @@ import LottieView from "lottie-react-native";
 import { useTheme } from "@react-navigation/native";
 
 // App's Internal Imports
-import get_computed_style from "../../assets/styles/favourites/favourites_error";
 const favourite_error = require("../../assets/images/favourite_error.json");
+import get_computed_style from "../../assets/styles/favourites/favourites_error";
 
-const FavouritesError = () => {
+const FavouritesError = ({ error_message }) => {
   const { colors } = useTheme();
   const styles = get_computed_style(colors);
 
@@ -22,7 +22,7 @@ const FavouritesError = () => {
         style={styles.favourites_error_animation}
       />
 
-      <Text style={styles.favourites_error_text}>Nothing Here Yet</Text>
+      <Text style={styles.favourites_error_text}>{error_message}</Text>
     </>
   );
 };

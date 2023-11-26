@@ -16,6 +16,7 @@ import WalkThroughItem from "./walk_through";
 import SearchLoading from "./loading/search";
 import BottomSheet from "./utils/BottomSheet";
 import WeatherLoader from "./loading/weather";
+import ReleaseNotes from "./settings/release_notes";
 import FavouritesLoader from "./loading/favourites";
 import PrivacyPolicy from "./settings/privacy_policy";
 import HourlyForecast from "./weather/hourly_forecast";
@@ -46,6 +47,7 @@ export {
   AirQuality,
   Favourites,
   BottomSheet,
+  ReleaseNotes,
   PrivacyPolicy,
   WeatherLoader,
   FavouriteItem,

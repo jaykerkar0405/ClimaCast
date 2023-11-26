@@ -7,15 +7,14 @@ import { View, Text, TouchableOpacity } from "react-native";
 // App's External Imports
 import { useTheme } from "@react-navigation/native";
 import analytics from "@react-native-firebase/analytics";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { MaterialCommunityIcons, Ionicons } from "react-native-vector-icons";
+import { Ionicons, MaterialCommunityIcons } from "react-native-vector-icons";
 
 // App's Internal Imports
 import { screen_height } from "../constants";
 import get_computed_style from "../assets/styles/settings";
 import { Theme, Footer, BottomSheet } from "../components";
 
-const Settings = ({ theme, navigation: { navigate } }) => {
+const Settings = ({ navigation: { navigate } }) => {
   const { colors } = useTheme();
   const bottom_sheet_ref = useRef(null);
   const styles = get_computed_style(colors);
@@ -34,7 +33,7 @@ const Settings = ({ theme, navigation: { navigate } }) => {
   }, []);
 
   return (
-    <GestureHandlerRootView>
+    <>
       <View style={styles.container}>
         <View style={styles.setting_section}>
           <Text style={styles.setting_title}>General</Text>
@@ -57,6 +56,27 @@ const Settings = ({ theme, navigation: { navigate } }) => {
               />
 
               <Text style={styles.setting_name}>Theme</Text>
+            </View>
+
+            <View>
+              <Ionicons name="chevron-forward" style={styles.setting_button} />
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={async () => {
+              navigate("ReleaseNotes");
+            }}
+            style={styles.setting}
+          >
+            <View style={styles.setting_information}>
+              <MaterialCommunityIcons
+                name="update"
+                color="#FF5722"
+                style={styles.setting_icon}
+              />
+
+              <Text style={styles.setting_name}>Release Notes</Text>
             </View>
 
             <View>
@@ -140,7 +160,7 @@ const Settings = ({ theme, navigation: { navigate } }) => {
       <BottomSheet ref={bottom_sheet_ref}>
         {children === "theme" && <Theme />}
       </BottomSheet>
-    </GestureHandlerRootView>
+    </>
   );
 };
 

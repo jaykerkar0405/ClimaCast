@@ -79,7 +79,7 @@ const WeatherInformation = ({
         <View style={styles.wind_information}>
           <View style={styles.wind_component}>
             <Text style={styles.wind_component_title}>Clouds</Text>
-            <Text style={styles.wind_component_value}>{clouds}</Text>
+            <Text style={styles.wind_component_value}>{clouds} %</Text>
           </View>
 
           <View style={styles.wind_component}>

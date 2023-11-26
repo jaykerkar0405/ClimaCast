@@ -18,7 +18,7 @@ const get_computed_style = (colors) => {
     tab: {
       display: "flex",
       borderRadius: 10,
-      marginVertical: 4.5,
+      marginVertical: 5.75,
       alignItems: "center",
       justifyContent: "center",
       width: 0.447 * screen_width,

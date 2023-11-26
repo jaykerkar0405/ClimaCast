@@ -11,14 +11,11 @@ import {
   Poppins_400Regular,
   Poppins_600SemiBold,
 } from "@expo-google-fonts/poppins";
-import * as Sentry from "sentry-expo";
 import { StatusBar } from "expo-status-bar";
 import * as SplashScreen from "expo-splash-screen";
 import analytics from "@react-native-firebase/analytics";
-import { captureException } from "@sentry/react-native";
-
-// App's Environment Variable Imports
-import { SENTRY_DSN, SENTRY_DEBUG } from "@env";
+import crashlytics from "@react-native-firebase/crashlytics";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 // App's Internal Imports
 import {
@@ -39,12 +36,6 @@ import {
 } from "./contexts";
 
 SplashScreen.preventAutoHideAsync();
-
-Sentry.init({
-  dsn: SENTRY_DSN,
-  debug: SENTRY_DEBUG,
-  enableInExpoDevelopment: true,
-});
 
 const Children = () => {
   const { theme } = useContext(ThemeContext);
@@ -104,8 +95,12 @@ const Children = () => {
 
 const App = () => {
   try {
-    useEffect(async () => {
-      await analytics().logAppOpen();
+    useEffect(() => {
+      const initiate_analytics = async () => {
+        await analytics().logAppOpen();
+      };
+
+      initiate_analytics();
     }, []);
 
     return (
@@ -113,14 +108,16 @@ const App = () => {
         <WeatherState>
           <NetworkState>
             <ThemeState>
-              <Children />
+              <GestureHandlerRootView>
+                <Children />
+              </GestureHandlerRootView>
             </ThemeState>
           </NetworkState>
         </WeatherState>
       </WalkThroughState>
     );
   } catch (error) {
-    captureException(error);
+    crashlytics().recordError(error);
   }
 };
 

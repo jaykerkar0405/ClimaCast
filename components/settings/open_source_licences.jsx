@@ -2,14 +2,12 @@
 import { useEffect, useState } from "react";
 
 // React Native Component Imports
-import { View, Text, Linking, Pressable } from "react-native";
+import { View, Text, Linking, FlatList, Pressable } from "react-native";
 
 // App's External Imports
 import { useTheme } from "@react-navigation/native";
-import { ScrollView } from "react-native-gesture-handler";
 
 // App's Internal Imports
-import { Footer } from "../../components";
 const licenses = require("../../licenses.json");
 import get_computed_style from "../../assets/styles/open_source_licences";
 
@@ -22,6 +20,58 @@ const OpenSourceLicences = () => {
   const [package_details, set_package_details] = useState(
     Object.values(licenses)
   );
+
+  const license = ({ item }) => {
+    return (
+      <View style={styles.license}>
+        <Text style={styles.license_title}>{item.name}</Text>
+
+        {item.license_type && (
+          <Text style={styles.license_content}>Type: {item.license_type}</Text>
+        )}
+
+        {item.publisher && (
+          <Text style={styles.license_content}>
+            Publisher: {item.publisher}
+          </Text>
+        )}
+
+        {item.repository && (
+          <Text style={styles.license_content}>
+            Repository:{" "}
+            <Pressable
+              onPress={async () => {
+                await Linking.openURL(item.repository);
+              }}
+            >
+              <Text style={styles.external_url}>
+                {item.repository.length <= 37
+                  ? item.repository
+                  : `${item.repository.slice(0, 34)}...`}
+              </Text>
+            </Pressable>
+          </Text>
+        )}
+
+        {item.repository && (
+          <Text style={styles.license_content}>
+            License:{"   "}
+            <Pressable
+              onPress={async () => {
+                await Linking.openURL(item.license_url);
+              }}
+            >
+              <Text style={styles.external_url}>
+                {item.license_url.length <= 37
+                  ? item.license_url
+                  : `${item.license_url.slice(0, 34)}...`}
+              </Text>
+            </Pressable>
+          </Text>
+        )}
+      </View>
+    );
+  };
 
   useEffect(() => {
     const merged_package = [];
@@ -54,67 +104,13 @@ const OpenSourceLicences = () => {
   }, []);
 
   return (
-    <ScrollView
-      style={styles.container}
-      showsVerticalScrollIndicator={false}
-      contentContainerStyle={{ flexGrow: 1 }}
-    >
-      {package_information.length > 0 &&
-        package_information.map((element, index) => {
-          return (
-            <View style={styles.license} key={index}>
-              <Text style={styles.license_title}>{element.name}</Text>
-
-              {element.license_type && (
-                <Text style={styles.license_content}>
-                  Type: {element.license_type}
-                </Text>
-              )}
-
-              {element.publisher && (
-                <Text style={styles.license_content}>
-                  Publisher: {element.publisher}
-                </Text>
-              )}
-
-              {element.repository && (
-                <Text style={styles.license_content}>
-                  Repository:{" "}
-                  <Pressable
-                    onPress={async () => {
-                      await Linking.openURL(element.repository);
-                    }}
-                  >
-                    <Text style={styles.external_url}>
-                      {element.repository.length <= 37
-                        ? element.repository
-                        : `${element.repository.slice(0, 34)}...`}
-                    </Text>
-                  </Pressable>
-                </Text>
-              )}
-
-              {element.repository && (
-                <Text style={styles.license_content}>
-                  License:{"   "}
-                  <Pressable
-                    onPress={async () => {
-                      await Linking.openURL(element.license_url);
-                    }}
-                  >
-                    <Text style={styles.external_url}>
-                      {element.license_url.length <= 37
-                        ? element.license_url
-                        : `${element.license_url.slice(0, 34)}...`}
-                    </Text>
-                  </Pressable>
-                </Text>
-              )}
-            </View>
-          );
-        })}
-      <Footer />
-    </ScrollView>
+    <View style={styles.container}>
+      <FlatList
+        renderItem={license}
+        data={package_information}
+        showsVerticalScrollIndicator={false}
+      />
+    </View>
   );
 };
 

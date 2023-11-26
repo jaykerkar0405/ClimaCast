@@ -24,33 +24,23 @@ A modern weather application built with React Native and Expo that provides real
 • Air Quality Index API
 
 📜 **Version Logs**\
-**Version** 1.0.0\
-• Initial release 🚀\
-• Real-time weather updates ⏲️\
-• Weather forecast feature 🌦️\
-• Air quality information 🌬️\
-• Save weather locations 📍
+**Version** 1.2.2\
+• Resolved critical bugs affecting app stability and performance. 🐛\
+• Fixed issues related to data synchronization for a smoother user experience. 🛠️\
+• Improved overall app responsiveness and loading times. 🚀\
+• Enhanced UI elements for better clarity and visual appeal. 🎨\
+• Addressed minor design inconsistencies for a more polished look. 🛑\
+• Implemented behind-the-scenes optimizations to optimize resource usage. 🚧\
+• General bug fixes and performance improvements. 🐞
 
-**Version** 1.0.1\
-• Enhanced Home Screen UI 🎉\
-• Modified Bottom Tab Bar Design 🎨\
-• Bug Fixes and Performance Boost 🚀\
-• Updated Icons and Graphics ✨\
-• Polished User Interactions 🤝
-
-**Version** 1.1.0\
-• Fixed bug in deleting favorite locations 🛠️\
-• Added new feature: Search Suggestion 🆕\
-• Minor UI enhancement of Home Screen 💫\
-• Performance improvements for smoother experience 🚀\
-• Updated backend for better reliability 🔄
-
-**Version** 1.1.1\
-• Minor UI enhancements: Improved colors, layout, and icons 🎨\
-• Bug fixes: Resolved crashes, UI glitches, and font size issues 🐛\
-• Improved stability: Optimized memory usage, reduced freezes 🏋️\
-• Major search bug fix: Fixed incorrect search suggestions 🔍\
-• Updated libraries: Enhanced security and compatibility 🔄
+**Version** 1.2.1\
+• Integrated advanced error monitoring for real-time issue detection 🚀\
+• Fine-tuned app performance, enhancing responsiveness ⚙️\
+• Proactively addressed bottlenecks for smoother operation 🔄\
+• Strengthened app stability and user experience 🛡️\
+• Ensured seamless functionality through proactive monitoring 👁️‍🗨️\
+• Optimized architecture for improved efficiency 📈\
+• User-centric approach: Delivering enhanced satisfaction 💡
 
 **Version** 1.2.0\
 • Dark Theme: Sleek and stylish for low-light conditions🌒\
@@ -62,14 +52,33 @@ A modern weather application built with React Native and Expo that provides real
 • Privacy and Security: Additional measures to protect your data 🛡️\
 • Bug Fixes and Stability: Improved app stability and reliability 🐞
 
-**Version** 1.2.1\
-• Integrated advanced error monitoring for real-time issue detection 🚀\
-• Fine-tuned app performance, enhancing responsiveness ⚙️\
-• Proactively addressed bottlenecks for smoother operation 🔄\
-• Strengthened app stability and user experience 🛡️\
-• Ensured seamless functionality through proactive monitoring 👁️‍🗨️\
-• Optimized architecture for improved efficiency 📈\
-• User-centric approach: Delivering enhanced satisfaction 💡
+**Version** 1.1.1\
+• Minor UI enhancements: Improved colors, layout, and icons 🎨\
+• Bug fixes: Resolved crashes, UI glitches, and font size issues 🐛\
+• Improved stability: Optimized memory usage, reduced freezes 🏋️\
+• Major search bug fix: Fixed incorrect search suggestions 🔍\
+• Updated libraries: Enhanced security and compatibility 🔄
+
+**Version** 1.1.0\
+• Fixed bug in deleting favorite locations 🛠️\
+• Added new feature: Search Suggestion 🆕\
+• Minor UI enhancement of Home Screen 💫\
+• Performance improvements for smoother experience 🚀\
+• Updated backend for better reliability 🔄
+
+**Version** 1.0.1\
+• Enhanced Home Screen UI 🎉\
+• Modified Bottom Tab Bar Design 🎨\
+• Bug Fixes and Performance Boost 🚀\
+• Updated Icons and Graphics ✨\
+• Polished User Interactions 🤝
+
+**Version** 1.0.0\
+• Initial release 🚀\
+• Real-time weather updates ⏲️\
+• Weather forecast feature 🌦️\
+• Air quality information 🌬️\
+• Save weather locations 📍
 
 🌤️ Happy Weather Forecasting! 🌈\
 • **The Climacast Team**

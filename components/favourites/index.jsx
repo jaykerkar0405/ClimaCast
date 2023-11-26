@@ -74,7 +74,7 @@ const Favourites = ({ navigation: { navigate } }) => {
           </ScrollView>
         </GestureHandlerRootView>
       ) : (
-        <FavouritesError />
+        <FavouritesError error_message="Nothing Here Yet" />
       )}
     </View>
   );

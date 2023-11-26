@@ -20,11 +20,15 @@ const Network = ({ colors }) => {
   const styles = get_computed_style(colors);
   const { fetch_network_status } = useContext(NetworkContext); // Function For Fetching Network Status
 
-  useEffect(async () => {
-    await analytics().logScreenView({
-      screen_name: "Network",
-      screen_class: "Network",
-    });
+  useEffect(() => {
+    const initiate_analytics = async () => {
+      await analytics().logScreenView({
+        screen_name: "Network",
+        screen_class: "Network",
+      });
+    };
+
+    initiate_analytics();
   }, []);
 
   return (

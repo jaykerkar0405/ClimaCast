@@ -40,7 +40,7 @@ const get_computed_style = (colors) => {
       paddingHorizontal: 10,
       justifyContent: "center",
       width: 0.4 * screen_width,
-      marginLeft: 0.099 * screen_width,
+      marginLeft: 0.075 * screen_width,
       borderColor: colors.secondary_text_color,
     },
     right_panel_title: {

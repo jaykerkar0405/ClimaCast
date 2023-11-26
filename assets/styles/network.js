@@ -46,7 +46,6 @@ const get_computed_style = (colors) => {
       fontSize: 15,
       color: "white",
       fontFamily: "Poppins_500Medium",
-      color: colors.primary_text_color,
     },
   });
 };

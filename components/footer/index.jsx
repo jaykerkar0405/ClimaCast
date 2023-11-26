@@ -31,9 +31,7 @@ const Footer = () => {
       </View>
 
       <View style={styles.application_information_container}>
-        <Text style={styles.application_information_title}>
-          Developer Name:
-        </Text>
+        <Text style={styles.application_information_title}>Developed By:</Text>
         <Text style={styles.application_information_value}> Jay Kerkar</Text>
       </View>
 
@@ -44,7 +42,7 @@ const Footer = () => {
           {Application.nativeApplicationVersion}
         </Text>
         <Text style={styles.application_information_title}>
-          {"  "}| Build Version:
+          {"  "}|{"  "}Build Version:
         </Text>
         <Text style={styles.application_information_value}>
           {" "}
