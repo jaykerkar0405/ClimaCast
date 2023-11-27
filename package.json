@@ -1,6 +1,6 @@
 {
   "name": "climacast",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
@@ -20,6 +20,7 @@
     "@react-native-firebase/analytics": "^18.6.2",
     "@react-native-firebase/app": "^18.6.2",
     "@react-native-firebase/crashlytics": "^18.6.2",
+    "@react-native-firebase/remote-config": "^18.6.2",
     "@react-navigation/bottom-tabs": "^6.5.11",
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",

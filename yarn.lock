@@ -1998,6 +1998,11 @@
   dependencies:
     stacktrace-js "^2.0.2"
 
+"@react-native-firebase/remote-config@^18.6.2":
+  version "18.6.2"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-18.6.2.tgz#b633e0d4ffb2a7f03aaa03b7677ad3f699f3512e"
+  integrity sha512-FiePyHHkK4Se9lAxtw03yR1oN4FiOSDo92BcH2SBBp+a+rx0+h2c7lSxFMzA0wyGj1VHHPH7gStF0iIsppr9hQ==
+
 "@react-native/assets-registry@^0.72.0":
   version "0.72.0"
   resolved "https://registry.yarnpkg.com/@react-native/assets-registry/-/assets-registry-0.72.0.tgz#c82a76a1d86ec0c3907be76f7faf97a32bbed05d"

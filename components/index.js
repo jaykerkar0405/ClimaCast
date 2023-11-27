@@ -16,6 +16,7 @@ import WalkThroughItem from "./walk_through";
 import SearchLoading from "./loading/search";
 import BottomSheet from "./utils/BottomSheet";
 import WeatherLoader from "./loading/weather";
+import VersionControl from "./utils/VersionControl";
 import ReleaseNotes from "./settings/release_notes";
 import FavouritesLoader from "./loading/favourites";
 import PrivacyPolicy from "./settings/privacy_policy";
@@ -52,6 +53,7 @@ export {
   WeatherLoader,
   FavouriteItem,
   SearchLoading,
+  VersionControl,
   HourlyForecast,
   FavouritesError,
   WalkThroughItem,

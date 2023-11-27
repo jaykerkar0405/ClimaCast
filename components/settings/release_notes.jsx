@@ -19,6 +19,25 @@ const ReleaseNotes = () => {
       contentContainerStyle={{ flexGrow: 1 }}
     >
       <View style={styles.release_note}>
+        <Text style={styles.release_note_version}>Version 1.2.3</Text>
+        <Text style={styles.release_note_content}>
+          • Resolved theme section bottom sheet issue. 🛠️
+        </Text>
+        <Text style={styles.release_note_content}>
+          • Improved overall theme section experience. 🌟
+        </Text>
+        <Text style={styles.release_note_content}>
+          • Added force app update capability. 🔄
+        </Text>
+        <Text style={styles.release_note_content}>
+          • General bug fixes and performance improvements. 🚀
+        </Text>
+        <Text style={styles.release_note_content}>
+          • Increased application stability. ⚙️
+        </Text>
+      </View>
+
+      <View style={styles.release_note}>
         <Text style={styles.release_note_version}>Version 1.2.2</Text>
         <Text style={styles.release_note_content}>
           • Resolved critical bugs affecting app stability and performance. 🐛

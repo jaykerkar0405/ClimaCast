@@ -24,14 +24,21 @@ A modern weather application built with React Native and Expo that provides real
 • Air Quality Index API
 
 📜 **Version Logs**\
+**Version** 1.2.3\
+• Resolved theme section bottom sheet issue 🛠️\
+• Improved overall theme section experience 🌟\
+• Added force app update capability 🔄\
+• General bug fixes and performance improvements 🚀\
+• Increased application stability ⚙️
+
 **Version** 1.2.2\
-• Resolved critical bugs affecting app stability and performance. 🐛\
-• Fixed issues related to data synchronization for a smoother user experience. 🛠️\
-• Improved overall app responsiveness and loading times. 🚀\
-• Enhanced UI elements for better clarity and visual appeal. 🎨\
-• Addressed minor design inconsistencies for a more polished look. 🛑\
-• Implemented behind-the-scenes optimizations to optimize resource usage. 🚧\
-• General bug fixes and performance improvements. 🐞
+• Resolved critical bugs affecting app stability and performance 🐛\
+• Fixed issues related to data synchronization for a smoother user experience 🛠️\
+• Improved overall app responsiveness and loading times 🚀\
+• Enhanced UI elements for better clarity and visual appeal 🎨\
+• Addressed minor design inconsistencies for a more polished look 🛑\
+• Implemented behind-the-scenes optimizations to optimize resource usage 🚧\
+• General bug fixes and performance improvements 🐞
 
 **Version** 1.2.1\
 • Integrated advanced error monitoring for real-time issue detection 🚀\
