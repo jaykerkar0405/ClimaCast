@@ -11,11 +11,12 @@ import ViewShot from "react-native-view-shot";
 import { useTheme } from "@react-navigation/native";
 
 // App's Internal Imports
-import { render_weather_icon } from "../../modules";
+import { render_weather_icon, determine_temperature_unit } from "../../modules";
 import get_computed_style from "../../assets/styles/weather/weather_components";
 
 const WeatherComponents = ({
   snapshot_ref,
+  temperature_unit,
   is_timeline_active,
   weather_forecast: {
     pressure,
@@ -45,7 +46,9 @@ const WeatherComponents = ({
           {Math.round(temperature)}
           {"  "}
         </Text>
-        <Text style={styles.weather_degree_symbol}>°C</Text>
+        <Text style={styles.weather_degree_symbol}>
+          {determine_temperature_unit(temperature_unit)}
+        </Text>
       </View>
 
       <View style={styles.lower_panel}>

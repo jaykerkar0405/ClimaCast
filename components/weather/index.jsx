@@ -16,6 +16,7 @@ const Weather = ({
   future_forecast,
   weather_location,
   weather_forecast,
+  temperature_unit,
   is_timeline_active,
   set_is_timeline_active,
 }) => {
@@ -29,12 +30,14 @@ const Weather = ({
         timeline_type={"weather"}
         set_timeline_id={set_timeline_id}
         future_forecast={future_forecast}
+        temperature_unit={temperature_unit}
         is_timeline_active={is_timeline_active}
         set_is_timeline_active={set_is_timeline_active}
       />
 
       <WeatherComponents
         snapshot_ref={snapshot_ref}
+        temperature_unit={temperature_unit}
         is_timeline_active={is_timeline_active}
         weather_forecast={{
           temperature: weather_forecast.main.temp,
@@ -45,9 +48,14 @@ const Weather = ({
         }}
       />
 
-      <HourlyForecast future_forecast={future_forecast.list} offset={0} />
+      <HourlyForecast
+        offset={0}
+        temperature_unit={temperature_unit}
+        future_forecast={future_forecast.list}
+      />
 
       <WeatherParameters
+        temperature_unit={temperature_unit}
         weather_forecast={{
           sunset: weather_forecast.sys.sunset,
           sunrise: weather_forecast.sys.sunrise,
@@ -61,6 +69,7 @@ const Weather = ({
       />
 
       <WeatherInformation
+        temperature_unit={temperature_unit}
         weather_forecast={{
           clouds: weather_forecast.clouds.all,
           latitude: weather_forecast.coord.lat,

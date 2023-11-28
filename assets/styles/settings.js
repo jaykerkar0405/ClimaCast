@@ -39,9 +39,17 @@ const get_computed_style = (colors) => {
       fontFamily: "Poppins_400Regular",
       color: colors.primary_text_color,
     },
+    setting_button_container: {
+      flexDirection: "row",
+    },
+    setting_button_text: {
+      fontSize: 12.75,
+      fontFamily: "Poppins_400Regular",
+      color: colors.secondary_text_color,
+    },
     setting_button: {
       fontSize: 20,
-      marginLeft: 0.125 * screen_width,
+      marginLeft: 0.025 * screen_width,
       color: colors.tertiary_text_color,
     },
   });

@@ -10,8 +10,10 @@ import { Ionicons } from "react-native-vector-icons";
 import analytics from "@react-native-firebase/analytics";
 
 // App's Internal Imports
-import { ThemeContext } from "../../contexts";
 import get_computed_style from "../../assets/styles/theme";
+
+// App's Context Imports
+import { ThemeContext } from "../../contexts";
 
 const Theme = () => {
   const { colors } = useTheme();
@@ -57,7 +59,7 @@ const Theme = () => {
           }}
         >
           <View style={styles.theme_information}>
-            <Ionicons name="sunny" style={styles.theme_icon} color="#CCCC00" />
+            <Ionicons name="sunny" color="#CCCC00" style={styles.theme_icon} />
             <Text style={styles.theme_name}>Light</Text>
           </View>
 
@@ -78,7 +80,7 @@ const Theme = () => {
           }}
         >
           <View style={styles.theme_information}>
-            <Ionicons name="moon" style={styles.theme_icon} color="#146C94" />
+            <Ionicons name="moon" color="#146C94" style={styles.theme_icon} />
             <Text style={styles.theme_name}>Dark</Text>
           </View>
 

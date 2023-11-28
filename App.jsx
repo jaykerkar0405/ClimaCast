@@ -12,12 +12,9 @@ import {
   Poppins_600SemiBold,
 } from "@expo-google-fonts/poppins";
 import { StatusBar } from "expo-status-bar";
-import * as Application from "expo-application";
 import * as SplashScreen from "expo-splash-screen";
 import analytics from "@react-native-firebase/analytics";
 import crashlytics from "@react-native-firebase/crashlytics";
-import remoteConfig from "@react-native-firebase/remote-config";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 // App's Internal Imports
 import {
@@ -26,6 +23,7 @@ import {
   screen_width,
   screen_height,
 } from "./constants";
+import { fetch_remote_config } from "./modules";
 import { Screens, VersionControl } from "./components";
 
 // App's Context Imports
@@ -35,6 +33,7 @@ import {
   NetworkState,
   ThemeContext,
   WalkThroughState,
+  TemperatureUnitState,
 } from "./contexts";
 
 SplashScreen.preventAutoHideAsync();
@@ -119,35 +118,7 @@ const App = () => {
 
       initiate_analytics();
 
-      remoteConfig()
-        .setDefaults({
-          critical_update_version: "",
-          critical_update_download_url: "",
-        })
-        .then(() => remoteConfig().fetchAndActivate())
-        .then(() => {
-          const critical_update_version = remoteConfig().getValue(
-            "critical_update_version"
-          );
-          const critical_update_download_url = remoteConfig().getValue(
-            "critical_update_download_url"
-          );
-
-          if (
-            critical_update_version.getSource() === "remote" &&
-            critical_update_download_url.getSource() === "remote"
-          ) {
-            if (
-              Application.nativeApplicationVersion !=
-              critical_update_version._value
-            ) {
-              set_is_visible(true);
-              set_critical_update_download_url(
-                critical_update_download_url._value
-              );
-            }
-          }
-        });
+      fetch_remote_config(set_is_visible, set_critical_update_download_url);
     }, []);
 
     return (
@@ -155,12 +126,12 @@ const App = () => {
         <WeatherState>
           <NetworkState>
             <ThemeState>
-              <GestureHandlerRootView>
+              <TemperatureUnitState>
                 <Children
                   is_visible={is_visible}
                   critical_update_download_url={critical_update_download_url}
                 />
-              </GestureHandlerRootView>
+              </TemperatureUnitState>
             </ThemeState>
           </NetworkState>
         </WeatherState>

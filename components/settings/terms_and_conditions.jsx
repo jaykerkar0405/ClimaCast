@@ -1,9 +1,8 @@
 // React Native Component Imports
-import { View, Text, Linking, Pressable } from "react-native";
+import { View, Text, Linking, Pressable, ScrollView } from "react-native";
 
 // App's External Imports
 import { useTheme } from "@react-navigation/native";
-import { ScrollView } from "react-native-gesture-handler";
 
 // App's Internal Imports
 import { Footer } from "../../components";

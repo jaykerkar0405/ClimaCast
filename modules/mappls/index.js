@@ -1,9 +1,6 @@
 // App's Environment Variable Imports
 import { MAPPLS_API_KEY, MAPPLS_CLIENT_ID, MAPPLS_CLIENT_SECRET } from "@env";
 
-// App's Internal Imports
-import { validate_weather_location } from "../../modules";
-
 // fetch_weather_location_by_geolocation() ----> The said function will be used to fetch weather location by `GEOLOCATION` (Latitude, Longitude) method
 const fetch_weather_location_by_geolocation = async (latitude, longitude) => {
   const api = `https://apis.mappls.com/advancedmaps/v1/${MAPPLS_API_KEY}/rev_geocode?lat=${latitude}&lng=${longitude}&region=IND&lang=en`;

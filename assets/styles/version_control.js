@@ -12,6 +12,7 @@ const get_computed_style = (colors) => {
       justifyContent: "center",
     },
     version_control_section: {
+      elevation: 2.5,
       borderRadius: 10,
       alignItems: "center",
       width: 0.8 * screen_width,

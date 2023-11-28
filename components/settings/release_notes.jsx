@@ -19,48 +19,64 @@ const ReleaseNotes = () => {
       contentContainerStyle={{ flexGrow: 1 }}
     >
       <View style={styles.release_note}>
+        <Text style={styles.release_note_version}>Version 1.3.0</Text>
+        <Text style={styles.release_note_content}>
+          • Resolved pesky bugs 🐞
+        </Text>
+        <Text style={styles.release_note_content}>
+          • Enhanced overall stability 🚀
+        </Text>
+        <Text style={styles.release_note_content}>
+          • Added the ability to choose temperature units 🌡️
+        </Text>
+        <Text style={styles.release_note_content}>
+          • Enjoy smoother performance and reliability 🌟
+        </Text>
+      </View>
+
+      <View style={styles.release_note}>
         <Text style={styles.release_note_version}>Version 1.2.3</Text>
         <Text style={styles.release_note_content}>
-          • Resolved theme section bottom sheet issue. 🛠️
+          • Resolved theme section bottom sheet issue 🛠️
         </Text>
         <Text style={styles.release_note_content}>
-          • Improved overall theme section experience. 🌟
+          • Improved overall theme section experience 🌟
         </Text>
         <Text style={styles.release_note_content}>
-          • Added force app update capability. 🔄
+          • Added force app update capability 🔄
         </Text>
         <Text style={styles.release_note_content}>
-          • General bug fixes and performance improvements. 🚀
+          • General bug fixes and performance improvements 🚀
         </Text>
         <Text style={styles.release_note_content}>
-          • Increased application stability. ⚙️
+          • Increased application stability ⚙️
         </Text>
       </View>
 
       <View style={styles.release_note}>
         <Text style={styles.release_note_version}>Version 1.2.2</Text>
         <Text style={styles.release_note_content}>
-          • Resolved critical bugs affecting app stability and performance. 🐛
+          • Resolved critical bugs affecting app stability and performance 🐛
         </Text>
         <Text style={styles.release_note_content}>
           • Fixed issues related to data synchronization for a smoother user
-          experience. 🛠️
+          experience 🛠️
         </Text>
         <Text style={styles.release_note_content}>
-          • Improved overall app responsiveness and loading times. 🚀
+          • Improved overall app responsiveness and loading times 🚀
         </Text>
         <Text style={styles.release_note_content}>
-          • Enhanced UI elements for better clarity and visual appeal. 🎨
+          • Enhanced UI elements for better clarity and visual appeal 🎨
         </Text>
         <Text style={styles.release_note_content}>
-          • Addressed minor design inconsistencies for a more polished look. 🛑
+          • Addressed minor design inconsistencies for a more polished look 🛑
         </Text>
         <Text style={styles.release_note_content}>
           • Implemented behind-the-scenes optimizations to optimize resource
-          usage. 🚧
+          usage 🚧
         </Text>
         <Text style={styles.release_note_content}>
-          • General bug fixes and performance improvements. 🐞
+          • General bug fixes and performance improvements 🐞
         </Text>
       </View>
 

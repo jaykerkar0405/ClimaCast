@@ -25,7 +25,9 @@ import {
   fetch_weather_location_by_geolocation,
 } from "../../modules";
 import { screen_height } from "../../constants";
-import { WalkThroughContext } from "../../contexts";
+
+// App's Context Imports
+import { WalkThroughContext, TemperatureUnitContext } from "../../contexts";
 
 const Main = ({ type, identifier, navigation }) => {
   const [loading, set_loading] = useState(true);
@@ -34,6 +36,7 @@ const Main = ({ type, identifier, navigation }) => {
   const [active_tab, set_active_tab] = useState("weather");
   const [future_forecast, set_future_forecast] = useState(null);
   const { walk_through_status } = useContext(WalkThroughContext);
+  const { temperature_unit } = useContext(TemperatureUnitContext);
   const [weather_forecast, set_weather_forecast] = useState(null);
   const [weather_location, set_weather_location] = useState(null);
   const [is_timeline_active, set_is_timeline_active] = useState(false);
@@ -60,7 +63,8 @@ const Main = ({ type, identifier, navigation }) => {
     if (type === "geolocation") {
       const fetched_weather_forecast = await fetch_weather_by_geolocation(
         identifier.latitude,
-        identifier.longitude
+        identifier.longitude,
+        temperature_unit
       );
 
       if (fetched_weather_forecast.cod === 200) {
@@ -75,7 +79,8 @@ const Main = ({ type, identifier, navigation }) => {
         const fetched_hourly_weather_forecast =
           await fetch_hourly_weather_by_geolocation(
             identifier.latitude,
-            identifier.longitude
+            identifier.longitude,
+            temperature_unit
           );
 
         if (Number(fetched_hourly_weather_forecast.cod) === 200) {
@@ -102,7 +107,8 @@ const Main = ({ type, identifier, navigation }) => {
 
     if (type === "city") {
       const fetched_weather_forecast = await fetch_weather_by_city(
-        identifier.city
+        identifier.city,
+        temperature_unit
       );
 
       if (fetched_weather_forecast.cod === 200) {
@@ -115,7 +121,7 @@ const Main = ({ type, identifier, navigation }) => {
         );
 
         const fetched_hourly_weather_forecast =
-          await fetch_hourly_weather_by_city(identifier.city);
+          await fetch_hourly_weather_by_city(identifier.city, temperature_unit);
 
         if (Number(fetched_hourly_weather_forecast.cod) === 200) {
           set_future_forecast(fetched_hourly_weather_forecast);
@@ -155,8 +161,9 @@ const Main = ({ type, identifier, navigation }) => {
   };
 
   useEffect(() => {
+    set_loading(true);
     fetch_weather_forecast();
-  }, [identifier, walk_through_status]);
+  }, [identifier, temperature_unit, walk_through_status]);
 
   useEffect(() => {
     if (active_tab === "weather") {
@@ -204,6 +211,7 @@ const Main = ({ type, identifier, navigation }) => {
             <Weather
               future_forecast={future_forecast}
               weather_location={weather_location}
+              temperature_unit={temperature_unit}
               weather_forecast={weather_forecast}
               is_timeline_active={is_timeline_active}
               set_is_timeline_active={set_is_timeline_active}

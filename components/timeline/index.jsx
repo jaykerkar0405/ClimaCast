@@ -17,6 +17,7 @@ const Timeline = ({
   timeline_type,
   set_timeline_id,
   future_forecast,
+  temperature_unit,
   is_timeline_active,
   set_is_timeline_active,
 }) => {
@@ -110,6 +111,7 @@ const Timeline = ({
 
           <HourlyForecast
             offset={timeline_id}
+            temperature_unit={temperature_unit}
             future_forecast={future_forecast.list}
           />
         </>

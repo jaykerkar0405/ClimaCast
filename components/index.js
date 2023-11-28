@@ -22,6 +22,7 @@ import FavouritesLoader from "./loading/favourites";
 import PrivacyPolicy from "./settings/privacy_policy";
 import HourlyForecast from "./weather/hourly_forecast";
 import FavouriteItem from "./favourites/favourite_item";
+import TemperatureUnit from "./settings/temperature_unit";
 import FavouritesError from "./favourites/favourites_error";
 import WeatherComponents from "./weather/weather_components";
 import UtilityComponents from "./weather/utility_components";
@@ -55,6 +56,7 @@ export {
   SearchLoading,
   VersionControl,
   HourlyForecast,
+  TemperatureUnit,
   FavouritesError,
   WalkThroughItem,
   FavouritesLoader,

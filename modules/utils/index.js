@@ -7,6 +7,10 @@ import {
 } from "../../constants";
 import images from "../../assets/images/weather";
 
+// App's External Imports
+import * as Application from "expo-application";
+import remoteConfig from "@react-native-firebase/remote-config";
+
 // validate_weather_location() ----> The said function will be used to fetch city name by by `GEOLOCATION` (Latitude, Longitude) method and trim the weather location if it exceeds by 11 characters
 const validate_weather_location = (weather_location) => {
   if (weather_location.length > 11) {
@@ -234,6 +238,48 @@ const bearing_to_direction = (angle) => {
   }
 };
 
+// fetch_remote_config() ----> The said function will be used to fetch remote configurations from Firebase
+const fetch_remote_config = (
+  set_is_visible,
+  set_critical_update_download_url
+) => {
+  remoteConfig()
+    .setDefaults({
+      critical_update_version: "",
+      critical_update_download_url: "",
+    })
+    .then(() => remoteConfig().fetchAndActivate())
+    .then(() => {
+      const critical_update_version = remoteConfig().getValue(
+        "critical_update_version"
+      );
+      const critical_update_download_url = remoteConfig().getValue(
+        "critical_update_download_url"
+      );
+
+      if (
+        critical_update_version.getSource() === "remote" &&
+        critical_update_download_url.getSource() === "remote"
+      ) {
+        if (
+          Application.nativeApplicationVersion != critical_update_version._value
+        ) {
+          set_is_visible(true);
+          set_critical_update_download_url(critical_update_download_url._value);
+        }
+      }
+    });
+};
+
+// determine_temperature_unit() ----> The said function will be used to determine the temperature unit based upon user selection
+const determine_temperature_unit = (temperature_unit) => {
+  return temperature_unit === "metric"
+    ? "°C"
+    : temperature_unit === "imperial"
+    ? "°F"
+    : "K";
+};
+
 export {
   next_slide,
   previous_slide,
@@ -241,10 +287,12 @@ export {
   compare_timezone,
   calculate_timespan,
   render_weather_icon,
+  fetch_remote_config,
   bearing_to_direction,
   render_weather_message,
   redirect_to_error_screen,
   validate_weather_location,
+  determine_temperature_unit,
   change_current_slide_index,
   convert_unix_to_offset_time,
   convert_unix_to_standard_time,

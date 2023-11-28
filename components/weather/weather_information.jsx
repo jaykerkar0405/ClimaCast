@@ -6,10 +6,14 @@ import { useTheme } from "@react-navigation/native";
 import { MaterialIcons } from "react-native-vector-icons";
 
 // App's Internal Imports
-import { bearing_to_direction } from "../../modules";
+import {
+  bearing_to_direction,
+  determine_temperature_unit,
+} from "../../modules";
 import get_computed_style from "../../assets/styles/weather/weather_information";
 
 const WeatherInformation = ({
+  temperature_unit,
   weather_forecast: {
     clouds,
     latitude,
@@ -58,7 +62,9 @@ const WeatherInformation = ({
             {Math.round(min_temperature)}
             {"   "}
           </Text>
-          <Text style={styles.theoretical_information_degree_symbol}>°C</Text>
+          <Text style={styles.theoretical_information_degree_symbol}>
+            {determine_temperature_unit(temperature_unit)}
+          </Text>
         </View>
 
         <View
@@ -71,7 +77,9 @@ const WeatherInformation = ({
             {Math.round(max_temperature)}
             {"   "}
           </Text>
-          <Text style={styles.theoretical_information_degree_symbol}>°C</Text>
+          <Text style={styles.theoretical_information_degree_symbol}>
+            {determine_temperature_unit(temperature_unit)}
+          </Text>
         </View>
       </View>
 

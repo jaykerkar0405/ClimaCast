@@ -11,11 +11,12 @@ import { useTheme } from "@react-navigation/native";
 import {
   compare_timezone,
   render_weather_icon,
+  determine_temperature_unit,
   convert_unix_to_offset_time,
 } from "../../modules";
 import get_computed_style from "../../assets/styles/weather/hourly_forecast";
 
-const HourlyForecast = ({ future_forecast, offset }) => {
+const HourlyForecast = ({ offset, future_forecast, temperature_unit }) => {
   const { colors } = useTheme();
   const styles = get_computed_style(colors);
   const [hourly_forecast, set_hourly_forecast] = useState(null);
@@ -46,9 +47,10 @@ const HourlyForecast = ({ future_forecast, offset }) => {
     return () => {
       set_hourly_forecast(null);
     };
-  }, [offset]);
+  }, [offset, temperature_unit]);
 
   const HourlyForecastItem = ({
+    temperature_unit,
     hourly_forecast: {
       unix_time,
       temperature,
@@ -77,7 +79,9 @@ const HourlyForecast = ({ future_forecast, offset }) => {
           {Math.round(temperature)}
         </Text>
 
-        <Text style={styles.hourly_forecast_degree_symbol}>°C</Text>
+        <Text style={styles.hourly_forecast_degree_symbol}>
+          {determine_temperature_unit(temperature_unit)}
+        </Text>
       </View>
     );
   };
@@ -93,6 +97,7 @@ const HourlyForecast = ({ future_forecast, offset }) => {
         if (convert_unix_to_offset_time(item.dt) !== "21:00") {
           return (
             <HourlyForecastItem
+              temperature_unit={temperature_unit}
               hourly_forecast={{
                 unix_time: item.dt,
                 temperature: item.main.temp,

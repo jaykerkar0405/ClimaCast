@@ -24,6 +24,12 @@ A modern weather application built with React Native and Expo that provides real
 • Air Quality Index API
 
 📜 **Version Logs**\
+**Version** 1.3.0\
+Resolved pesky bugs 🐞\
+Enhanced overall stability 🚀\
+Added the ability to choose temperature units 🌡️\
+Enjoy smoother performance and reliability 🌟
+
 **Version** 1.2.3\
 • Resolved theme section bottom sheet issue 🛠️\
 • Improved overall theme section experience 🌟\
