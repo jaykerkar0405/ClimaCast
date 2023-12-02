@@ -5,6 +5,7 @@ import { useRef, useCallback, useState, useContext } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 
 // App's External Imports
+import { runOnJS } from "react-native-reanimated";
 import { useTheme } from "@react-navigation/native";
 import analytics from "@react-native-firebase/analytics";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -29,7 +30,7 @@ const Settings = ({ navigation: { navigate } }) => {
 
   const toggle_bottom_sheet = useCallback((type) => {
     const is_active = bottom_sheet_ref.current.is_active();
-    set_children(type);
+    runOnJS(set_children)(type);
 
     if (is_active) {
       bottom_sheet_ref.current.scroll_to(0);

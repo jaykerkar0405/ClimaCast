@@ -32,7 +32,7 @@ const BottomSheet = forwardRef(({ children }, ref) => {
     "worklet";
     active.value = destination !== 0;
     translate_y.value = withSpring(destination, { damping: 50 });
-  });
+  }, []);
 
   const is_active = useCallback(() => {
     return active.value;

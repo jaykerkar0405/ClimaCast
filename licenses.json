@@ -1103,25 +1103,7 @@
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\config-plugins",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\config-plugins\\LICENSE"
   },
-  "@expo/config-plugins@7.4.0": {
-    "licenses": "MIT",
-    "repository": "https://github.com/expo/expo",
-    "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\prebuild-config\\node_modules\\@expo\\config-plugins",
-    "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\prebuild-config\\node_modules\\@expo\\config-plugins\\LICENSE"
-  },
-  "@expo/config-plugins@7.5.0": {
-    "licenses": "MIT",
-    "repository": "https://github.com/expo/expo",
-    "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\prebuild-config\\node_modules\\@expo\\config\\node_modules\\@expo\\config-plugins",
-    "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\prebuild-config\\node_modules\\@expo\\config\\node_modules\\@expo\\config-plugins\\LICENSE"
-  },
   "@expo/config-types@49.0.0": {
-    "licenses": "MIT",
-    "repository": "https://github.com/expo/expo",
-    "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\config-plugins\\node_modules\\@expo\\config-types",
-    "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\config-plugins\\node_modules\\@expo\\config-types\\LICENSE"
-  },
-  "@expo/config-types@50.0.0-canary-20231125-d600e44": {
     "licenses": "MIT",
     "repository": "https://github.com/expo/expo",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\config-types",
@@ -1132,12 +1114,6 @@
     "repository": "https://github.com/expo/expo",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\config",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\config\\LICENSE"
-  },
-  "@expo/config@8.3.1": {
-    "licenses": "MIT",
-    "repository": "https://github.com/expo/expo",
-    "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\prebuild-config\\node_modules\\@expo\\config",
-    "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\prebuild-config\\node_modules\\@expo\\config\\LICENSE"
   },
   "@expo/dev-server@0.5.5": {
     "licenses": "MIT",
@@ -1158,24 +1134,11 @@
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\env",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\env\\LICENSE"
   },
-  "@expo/fingerprint@0.2.0": {
-    "licenses": "MIT",
-    "repository": "https://github.com/expo/expo",
-    "publisher": "650 Industries, Inc.",
-    "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\fingerprint",
-    "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\fingerprint\\LICENSE"
-  },
   "@expo/image-utils@0.3.22": {
     "licenses": "MIT",
     "repository": "https://github.com/expo/expo-cli",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\image-utils",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\image-utils\\LICENSE"
-  },
-  "@expo/json-file@8.2.36": {
-    "licenses": "MIT",
-    "repository": "https://github.com/expo/expo-cli",
-    "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\config-plugins\\node_modules\\@expo\\json-file",
-    "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\config-plugins\\node_modules\\@expo\\json-file\\LICENSE"
   },
   "@expo/json-file@8.2.37": {
     "licenses": "MIT",
@@ -1212,12 +1175,6 @@
     "repository": "https://github.com/expo/expo",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\cli\\node_modules\\@expo\\prebuild-config",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\cli\\node_modules\\@expo\\prebuild-config\\LICENSE"
-  },
-  "@expo/prebuild-config@6.4.0": {
-    "licenses": "MIT",
-    "repository": "https://github.com/expo/expo",
-    "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\prebuild-config",
-    "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\prebuild-config\\LICENSE"
   },
   "@expo/rudder-sdk-node@1.1.1": {
     "licenses": "MIT",
@@ -1410,7 +1367,7 @@
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@npmcli\\move-file",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@npmcli\\move-file\\LICENSE.md"
   },
-  "@react-native-async-storage/async-storage@1.19.8": {
+  "@react-native-async-storage/async-storage@1.18.2": {
     "licenses": "MIT",
     "repository": "https://github.com/react-native-async-storage/async-storage",
     "publisher": "Krzysztof Borowy",
@@ -1418,37 +1375,37 @@
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-async-storage\\async-storage",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-async-storage\\async-storage\\LICENSE"
   },
-  "@react-native-community/cli-clean@11.3.10": {
+  "@react-native-community/cli-clean@11.3.7": {
     "licenses": "MIT",
     "repository": "https://github.com/react-native-community/cli",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-clean",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-clean\\LICENSE"
   },
-  "@react-native-community/cli-config@11.3.10": {
+  "@react-native-community/cli-config@11.3.7": {
     "licenses": "MIT",
     "repository": "https://github.com/react-native-community/cli",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-config",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-config\\LICENSE"
   },
-  "@react-native-community/cli-debugger-ui@11.3.10": {
+  "@react-native-community/cli-debugger-ui@11.3.7": {
     "licenses": "MIT",
     "repository": "https://github.com/react-native-community/cli",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-debugger-ui",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-debugger-ui\\LICENSE"
   },
-  "@react-native-community/cli-doctor@11.3.10": {
+  "@react-native-community/cli-doctor@11.3.7": {
     "licenses": "MIT",
     "repository": "https://github.com/react-native-community/cli",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-doctor",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-doctor\\LICENSE"
   },
-  "@react-native-community/cli-hermes@11.3.10": {
+  "@react-native-community/cli-hermes@11.3.7": {
     "licenses": "MIT",
     "repository": "https://github.com/react-native-community/cli",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-hermes",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-hermes\\LICENSE"
   },
-  "@react-native-community/cli-platform-android@11.3.10": {
+  "@react-native-community/cli-platform-android@11.3.7": {
     "licenses": "MIT",
     "repository": "https://github.com/react-native-community/cli",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-doctor\\node_modules\\@react-native-community\\cli-platform-android",
@@ -1460,25 +1417,25 @@
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-platform-android",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-platform-android\\LICENSE"
   },
-  "@react-native-community/cli-platform-ios@11.3.10": {
+  "@react-native-community/cli-platform-ios@11.3.7": {
     "licenses": "MIT",
     "repository": "https://github.com/react-native-community/cli",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-platform-ios",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-platform-ios\\LICENSE"
   },
-  "@react-native-community/cli-plugin-metro@11.3.10": {
+  "@react-native-community/cli-plugin-metro@11.3.7": {
     "licenses": "MIT",
     "repository": "https://github.com/react-native-community/cli",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-plugin-metro",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-plugin-metro\\LICENSE"
   },
-  "@react-native-community/cli-server-api@11.3.10": {
+  "@react-native-community/cli-server-api@11.3.7": {
     "licenses": "MIT",
     "repository": "https://github.com/react-native-community/cli",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-server-api",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-server-api\\LICENSE"
   },
-  "@react-native-community/cli-tools@11.3.10": {
+  "@react-native-community/cli-tools@11.3.7": {
     "licenses": "MIT",
     "repository": "https://github.com/react-native-community/cli",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-tools",
@@ -1490,19 +1447,19 @@
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-platform-android\\node_modules\\@react-native-community\\cli-tools",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-platform-android\\node_modules\\@react-native-community\\cli-tools\\LICENSE"
   },
-  "@react-native-community/cli-types@11.3.10": {
+  "@react-native-community/cli-types@11.3.7": {
     "licenses": "MIT",
     "repository": "https://github.com/react-native-community/cli",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-types",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli-types\\LICENSE"
   },
-  "@react-native-community/cli@11.3.10": {
+  "@react-native-community/cli@11.3.7": {
     "licenses": "MIT",
     "repository": "https://github.com/react-native-community/cli",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\cli\\LICENSE"
   },
-  "@react-native-community/netinfo@11.1.0": {
+  "@react-native-community/netinfo@9.3.10": {
     "licenses": "MIT",
     "repository": "https://github.com/react-native-netinfo/react-native-netinfo",
     "publisher": "Matt Oakes",
@@ -1510,7 +1467,7 @@
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\netinfo",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-community\\netinfo\\LICENSE"
   },
-  "@react-native-firebase/analytics@18.6.2": {
+  "@react-native-firebase/analytics@18.7.1": {
     "licenses": "Apache-2.0",
     "repository": "https://github.com/invertase/react-native-firebase/tree/main/packages/analytics",
     "publisher": "Invertase",
@@ -1519,7 +1476,7 @@
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-firebase\\analytics",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-firebase\\analytics\\LICENSE"
   },
-  "@react-native-firebase/app@18.6.2": {
+  "@react-native-firebase/app@18.7.1": {
     "licenses": "Apache-2.0",
     "repository": "https://github.com/invertase/react-native-firebase/tree/main/packages/app",
     "publisher": "Invertase",
@@ -1528,7 +1485,7 @@
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-firebase\\app",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-firebase\\app\\LICENSE"
   },
-  "@react-native-firebase/crashlytics@18.6.2": {
+  "@react-native-firebase/crashlytics@18.7.1": {
     "licenses": "Apache-2.0",
     "repository": "https://github.com/invertase/react-native-firebase/tree/main/packages/crashlytics",
     "publisher": "Invertase",
@@ -1537,7 +1494,7 @@
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-firebase\\crashlytics",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native-firebase\\crashlytics\\LICENSE"
   },
-  "@react-native-firebase/remote-config@18.6.2": {
+  "@react-native-firebase/remote-config@18.7.1": {
     "licenses": "Apache-2.0",
     "repository": "https://github.com/invertase/react-native-firebase/tree/main/packages/remote-config",
     "publisher": "Invertase",
@@ -1577,6 +1534,12 @@
     "licenses": "MIT",
     "repository": "https://github.com/facebook/react-native",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@react-native\\normalize-colors"
+  },
+  "@react-native/normalize-colors@0.74.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/facebook/react-native",
+    "path": "D:\\ByteWise\\ClimaCast\\node_modules\\deprecated-react-native-prop-types\\node_modules\\@react-native\\normalize-colors",
+    "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\deprecated-react-native-prop-types\\node_modules\\@react-native\\normalize-colors\\README.md"
   },
   "@react-native/virtualized-lists@0.72.8": {
     "licenses": "MIT",
@@ -2394,7 +2357,7 @@
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\cli-spinners",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\cli-spinners\\license"
   },
-  "climacast@1.3.0": {
+  "climacast@1.3.1": {
     "licenses": "UNLICENSED",
     "private": true,
     "path": "D:\\ByteWise\\ClimaCast",
@@ -2548,16 +2511,16 @@
     "repository": "https://github.com/tj/commander.js",
     "publisher": "TJ Holowaychuk",
     "email": "tj@vision-media.ca",
-    "path": "D:\\ByteWise\\ClimaCast\\node_modules\\commander",
-    "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\commander\\LICENSE"
+    "path": "D:\\ByteWise\\ClimaCast\\node_modules\\sucrase\\node_modules\\commander",
+    "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\sucrase\\node_modules\\commander\\LICENSE"
   },
   "commander@7.2.0": {
     "licenses": "MIT",
     "repository": "https://github.com/tj/commander.js",
     "publisher": "TJ Holowaychuk",
     "email": "tj@vision-media.ca",
-    "path": "D:\\ByteWise\\ClimaCast\\node_modules\\expo-modules-autolinking\\node_modules\\commander",
-    "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\expo-modules-autolinking\\node_modules\\commander\\LICENSE"
+    "path": "D:\\ByteWise\\ClimaCast\\node_modules\\commander",
+    "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\commander\\LICENSE"
   },
   "commander@9.5.0": {
     "licenses": "MIT",
@@ -2875,7 +2838,7 @@
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\depd",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\depd\\LICENSE"
   },
-  "deprecated-react-native-prop-types@4.2.3": {
+  "deprecated-react-native-prop-types@4.1.0": {
     "licenses": "MIT",
     "repository": "https://github.com/facebook/react-native-deprecated-modules",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\deprecated-react-native-prop-types",
@@ -3113,13 +3076,6 @@
     "licenses": "MIT",
     "repository": "https://github.com/expo/expo",
     "publisher": "650 Industries, Inc.",
-    "path": "D:\\ByteWise\\ClimaCast\\node_modules\\expo\\node_modules\\expo-application",
-    "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\expo\\node_modules\\expo-application\\README.md"
-  },
-  "expo-application@5.4.0": {
-    "licenses": "MIT",
-    "repository": "https://github.com/expo/expo",
-    "publisher": "650 Industries, Inc.",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\expo-application",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\expo-application\\README.md"
   },
@@ -3193,14 +3149,14 @@
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\expo-keep-awake",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\expo-keep-awake\\README.md"
   },
-  "expo-linear-gradient@12.5.0": {
+  "expo-linear-gradient@12.3.0": {
     "licenses": "MIT",
     "repository": "https://github.com/expo/expo",
     "publisher": "650 Industries, Inc.",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\expo-linear-gradient",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\expo-linear-gradient\\README.md"
   },
-  "expo-location@16.3.0": {
+  "expo-location@16.1.0": {
     "licenses": "MIT",
     "repository": "https://github.com/expo/expo",
     "publisher": "650 Industries, Inc.",
@@ -3228,21 +3184,21 @@
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\expo-modules-core",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\expo-modules-core\\README.md"
   },
-  "expo-sharing@11.7.0": {
+  "expo-sharing@11.5.0": {
     "licenses": "MIT",
     "repository": "https://github.com/expo/expo",
     "publisher": "650 Industries, Inc.",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\expo-sharing",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\expo-sharing\\README.md"
   },
-  "expo-splash-screen@0.22.0": {
+  "expo-splash-screen@0.20.5": {
     "licenses": "MIT",
     "repository": "https://github.com/expo/expo",
     "publisher": "650 Industries, Inc.",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\expo-splash-screen",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\expo-splash-screen\\README.md"
   },
-  "expo-status-bar@1.7.1": {
+  "expo-status-bar@1.6.0": {
     "licenses": "MIT",
     "repository": "https://github.com/expo/expo",
     "publisher": "650 Industries, Inc.",
@@ -3487,8 +3443,8 @@
     "repository": "https://github.com/jprichardson/node-fs-extra",
     "publisher": "JP Richardson",
     "email": "jprichardson@gmail.com",
-    "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\cli\\node_modules\\fs-extra",
-    "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\cli\\node_modules\\fs-extra\\LICENSE"
+    "path": "D:\\ByteWise\\ClimaCast\\node_modules\\fs-extra",
+    "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\fs-extra\\LICENSE"
   },
   "fs-extra@9.0.0": {
     "licenses": "MIT",
@@ -4363,8 +4319,8 @@
     "repository": "https://github.com/jprichardson/node-jsonfile",
     "publisher": "JP Richardson",
     "email": "jprichardson@gmail.com",
-    "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\cli\\node_modules\\jsonfile",
-    "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\cli\\node_modules\\jsonfile\\LICENSE"
+    "path": "D:\\ByteWise\\ClimaCast\\node_modules\\fs-extra\\node_modules\\jsonfile",
+    "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\fs-extra\\node_modules\\jsonfile\\LICENSE"
   },
   "jsonfile@6.1.0": {
     "licenses": "MIT",
@@ -5702,7 +5658,7 @@
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\react-native-dotenv",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\react-native-dotenv\\LICENSE"
   },
-  "react-native-gesture-handler@2.14.0": {
+  "react-native-gesture-handler@2.12.1": {
     "licenses": "MIT",
     "repository": "https://github.com/software-mansion/react-native-gesture-handler",
     "publisher": "Krzysztof Magiera",
@@ -5718,7 +5674,7 @@
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\react-native-reanimated",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\react-native-reanimated\\LICENSE"
   },
-  "react-native-safe-area-context@4.7.4": {
+  "react-native-safe-area-context@4.6.3": {
     "licenses": "MIT",
     "repository": "https://github.com/th3rdwave/react-native-safe-area-context",
     "publisher": "Janic Duplessis",
@@ -5734,7 +5690,7 @@
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\react-native-safe-modules",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\react-native-safe-modules\\LICENSE"
   },
-  "react-native-screens@3.27.0": {
+  "react-native-screens@3.22.1": {
     "licenses": "MIT",
     "repository": "https://github.com/software-mansion/react-native-screens",
     "publisher": "Krzysztof Magiera",
@@ -5766,7 +5722,7 @@
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\react-native-vector-icons",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\react-native-vector-icons\\LICENSE"
   },
-  "react-native-view-shot@3.8.0": {
+  "react-native-view-shot@3.7.0": {
     "licenses": "MIT",
     "repository": "https://github.com/gre/react-native-view-shot",
     "publisher": "Gaëtan Renaudeau",
@@ -5774,7 +5730,7 @@
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\react-native-view-shot",
     "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\react-native-view-shot\\LICENSE"
   },
-  "react-native@0.72.7": {
+  "react-native@0.72.6": {
     "licenses": "MIT",
     "repository": "https://github.com/facebook/react-native",
     "path": "D:\\ByteWise\\ClimaCast\\node_modules\\react-native",
@@ -7084,8 +7040,8 @@
     "repository": "https://github.com/RyanZim/universalify",
     "publisher": "Ryan Zimmerman",
     "email": "opensrc@ryanzim.com",
-    "path": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\cli\\node_modules\\universalify",
-    "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\@expo\\cli\\node_modules\\universalify\\LICENSE"
+    "path": "D:\\ByteWise\\ClimaCast\\node_modules\\fs-extra\\node_modules\\universalify",
+    "licenseFile": "D:\\ByteWise\\ClimaCast\\node_modules\\fs-extra\\node_modules\\universalify\\LICENSE"
   },
   "universalify@1.0.0": {
     "licenses": "MIT",
