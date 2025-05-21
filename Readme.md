@@ -22,7 +22,6 @@ A modern weather application built with React Native and Expo that provides real
 • Expo\
 • OpenWeatherMap API\
 • Mappls API\
-• Air Quality Index API
 
 🔧 **Want To Test Our App**\
 Click [here](https://appdistribution.firebase.dev/i/f139a5ced9b1a647) to become a tester and enjoy our application 📱
